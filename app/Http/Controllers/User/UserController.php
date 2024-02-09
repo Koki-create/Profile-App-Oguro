@@ -10,8 +10,8 @@ class UserController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function signin(Request $request)
+    public function showSignin(Request $request)
     {
-        return view('sign-in');
+        return view('user.sign-in');
     }
 }
