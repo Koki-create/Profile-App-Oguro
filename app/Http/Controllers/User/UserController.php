@@ -12,6 +12,6 @@ class UserController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('register');
+        return view('sign-in');
     }
 }
