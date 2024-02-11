@@ -42,7 +42,7 @@ return [
     'digits_between'       => ':attributeは、:min桁から:max桁にしてください。',
     'dimensions'           => ':attributeの画像サイズが無効です',
     'distinct'             => ':attributeの値が重複しています。',
-    'email'                => ':attributeは、有効なメールアドレス形式で指定してください。',
+    'email'                => 'メールアドレスが正しい形式ではありません',
     'ends_with'            => ':attributeは、次のうちのいずれかで終わらなければなりません。: :values',
     'enum'                 => '選択した :attributeは 無効です。',
     'exists'               => '選択された:attributeは、有効ではありません。',
@@ -85,7 +85,7 @@ return [
         'array'   => ':attributeの項目は、:max個以下にしてください。',
         'file'    => ':attributeには、:max KB以下のファイルを指定してください。',
         'numeric' => ':attributeには、:max以下の数字を指定してください。',
-        'string'  => ':attributeは、:max文字以下にしてください。',
+        'string'  => ':attributeは:max文字以内で入力してください',
     ],
     'mimes'                => ':attributeには、:valuesタイプのファイルを指定してください。',
     'mimetypes'            => ':attributeには、:valuesタイプのファイルを指定してください。',
@@ -93,7 +93,7 @@ return [
         'array'   => ':attributeの項目は、:min個以上にしてください。',
         'file'    => ':attributeには、:min KB以上のファイルを指定してください。',
         'numeric' => ':attributeには、:min以上の数字を指定してください。',
-        'string'  => ':attributeは、:min文字以上にしてください。',
+        'string'  => '英数字8文字以上で入力してください',
     ],
     'multiple_of'          => ':attributeは:valueの倍数でなければなりません',
     'not_in'               => '選択された:attributeは、有効ではありません。',
@@ -105,8 +105,8 @@ return [
     'prohibited_if'        => ':attributeフィールドは、:otherが:valueの場合は禁止されています。',
     'prohibited_unless'    => ':attributeフィールドは、:otherが:valuesでない限り禁止されています。',
     'prohibits'            => ':attribute フィールドは、:other が存在することを禁止します。',
-    'regex'                => ':attributeには、有効な正規表現を指定してください。',
-    'required'             => ':attributeは、必ず指定してください。',
+    'regex'                => '英数字8文字以上で入力してください',
+    'required'             => ':attributeは必ず入力してください',
     'required_array_keys'  => ':attributeフィールドには、：valuesのエントリを含める必要があります。',
     'required_if'          => ':otherが:valueの場合、:attributeを指定してください。',
     'required_unless'      => ':otherが:values以外の場合、:attributeを指定してください。',
@@ -132,5 +132,10 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+    ],
+    'attributes' => [
+        'name' => '氏名',
+        'email' => 'メールアドレス',
+        'password' => 'パスワード'
     ],
 ];

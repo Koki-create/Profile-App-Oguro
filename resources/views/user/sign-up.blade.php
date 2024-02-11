@@ -23,21 +23,21 @@
                 @csrf
                 <div class="form-group">
                     <label for="name">氏名</label>
-                    <input type="text" id="name">
+                    <input type="text" id="name" name="name">
                     @error('name')
                         <p style="color: red;">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label for="email">メールアドレス</label>
-                    <input type="email" id="email">
+                    <input type="text" id="email" name="email">
                     @error('email')
                         <p style="color: red;">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label for="password">パスワード</label>
-                    <input type="password" id="password">
+                    <input type="password" id="password" name="password">
                     @error('password')
                         <p style="color: red;">{{ $message }}</p>
                     @enderror

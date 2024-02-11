@@ -31,4 +31,11 @@ class CreateRequest extends FormRequest
                 ]
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'email.email' => 'メールアドレスが正しい形式ではありません',
+        ];
+    }
 }
