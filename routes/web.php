@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // User
-Route::get('/signin', [\App\Http\Controllers\User\UserController::class, 'showSignin']);
+Route::get('/signup', [\App\Http\Controllers\User\UserController::class, 'showSignup']);
 
 
 require __DIR__.'/auth.php';
