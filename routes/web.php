@@ -29,9 +29,9 @@ Route::middleware('auth')->group(function () {
 });
 
 // User
-Route::get('/signup', [\App\Http\Controllers\User\UserController::class, 'showSignup']);
+Route::get('/signup', [\App\Http\Controllers\User\UserController::class, 'showSignup'])
 ->name('user.index');
-Route::post('user/create', \App\Http\Controllers\User\CreateController::class);
+Route::post('user/create', \App\Http\Controllers\User\CreateController::class)
 ->name('user.create');
 
 
