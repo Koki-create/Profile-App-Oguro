@@ -19,18 +19,28 @@
     <main>
         <section class="signup-section">
             <h2>新規登録</h2>
-            <form>
+            <form action="{{ route('user.create') }}" method="post">
+                @csrf
                 <div class="form-group">
                     <label for="name">氏名</label>
                     <input type="text" id="name">
+                    @error('name')
+                        <p style="color: red;">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="email">メールアドレス</label>
                     <input type="email" id="email">
+                    @error('email')
+                        <p style="color: red;">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="password">パスワード</label>
                     <input type="password" id="password">
+                    @error('password')
+                        <p style="color: red;">{{ $message }}</p>
+                    @enderror
                 </div>
                 <button type="submit" class="submit-button">登録する</button>
             </form>
