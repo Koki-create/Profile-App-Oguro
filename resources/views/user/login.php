@@ -34,7 +34,8 @@
                         <p style="color: red;">{{ $message }}</p>
                     @enderror
                 </div>
-                <button type="submit" class="submit-button">登録する</button>
+                <button type="submit" class="submit-button">ログインする</button>
+                <button type="submit" class="submit-button">新規登録する</button>
             </form>
         </section>
     </main>

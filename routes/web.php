@@ -45,4 +45,10 @@ Route::middleware('auth')->group(function (){
 
 });
 
+Route::get('/login',[\App\Http\Controllers\UserController::class,'showLogin'])
+->name('login');
+
+Route::post('/login',[\App\Http\Controllers\UserController::class,'login']);
+
+
 require __DIR__.'/auth.php';
