@@ -19,4 +19,16 @@ class UserController extends Controller
    {
        return view('user.top');
    }
+
+   public function logout()
+   {
+       Auth::logout();
+
+       return redirect('/login');
+   }
+
+   public function showLogin()
+   {
+       return view('user.login');
+   }
 }

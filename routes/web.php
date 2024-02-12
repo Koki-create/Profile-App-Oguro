@@ -36,8 +36,13 @@ Route::post('user/create', \App\Http\Controllers\User\CreateController::class)
 ->name('user.create');
 
 Route::middleware('auth')->group(function (){
+
     Route::get('/top',[\App\Http\Controllers\User\UserController::class,'top'])
     ->name('user.top');
+
+    Route::post('logout',[\App\Http\Controllers\UserController::class,'logout'])
+    ->name('user.logout');
+
 });
 
 require __DIR__.'/auth.php';
