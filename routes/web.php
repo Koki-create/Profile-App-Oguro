@@ -31,8 +31,13 @@ Route::middleware('auth')->group(function () {
 // User
 Route::get('/signup', [\App\Http\Controllers\User\UserController::class, 'showSignup'])
 ->name('user.index');
+
 Route::post('user/create', \App\Http\Controllers\User\CreateController::class)
 ->name('user.create');
 
+Route::middleware('auth')->group(function (){
+    Route::get('/top',[\App\Http\Controllers\User\UserController::class,'top'])
+    ->name('user.top');
+});
 
 require __DIR__.'/auth.php';

@@ -14,4 +14,9 @@ class UserController extends Controller
     {
         return view('user.sign-up');
     }
+
+    public function top()
+   {
+       return view('user.top');
+   }
 }
