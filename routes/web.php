@@ -40,15 +40,15 @@ Route::middleware('auth')->group(function (){
     Route::get('/top',[\App\Http\Controllers\User\UserController::class,'top'])
     ->name('user.top');
 
-    Route::post('logout',[\App\Http\Controllers\UserController::class,'logout'])
+    Route::post('logout',[\App\Http\Controllers\User\UserController::class,'logout'])
     ->name('user.logout');
 
 });
 
-Route::get('/login',[\App\Http\Controllers\UserController::class,'showLogin'])
+Route::get('/login',[\App\Http\Controllers\User\UserController::class,'showLogin'])
 ->name('login');
 
-Route::post('/login',[\App\Http\Controllers\UserController::class,'login']);
+Route::post('/login',[\App\Http\Controllers\User\UserController::class,'login']);
 
 
 require __DIR__.'/auth.php';
