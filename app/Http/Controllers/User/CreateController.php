@@ -21,7 +21,7 @@ class CreateController extends Controller
             'password'=>Hash::make($request['password'])
         ]);
  
-        // Auth::login($user);
+        Auth::login($user);
  
         return redirect()->route('user.top');
     }
