@@ -13,7 +13,9 @@
         <div class="header-content">
             <h1>My Portfolio</h1>
         </div>
-        <button type="submit" class="button_white">ログイン</button>
+        <form action="{{ route('user.showLogin') }}" method="get">
+            <button type="submit" class="button_white">ログイン</button>
+        </form>
     </header>
 
     <main>
