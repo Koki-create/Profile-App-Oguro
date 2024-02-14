@@ -14,11 +14,10 @@
             <h1>My Portfolio</h1>
         </div>
     </header>
-
     <main>
         <section class="signup-section">
             <h2>ログイン</h2>
-            <form action="{{ route('user.create') }}" method="post">
+            <form action="" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="email">メールアドレス</label>
@@ -39,7 +38,6 @@
             </form>
         </section>
     </main>
-
     <footer>
         <p>portfolio site</p>
     </footer>
