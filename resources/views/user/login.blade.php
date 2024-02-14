@@ -17,22 +17,19 @@
     <main>
         <section class="signup-section">
             <h2>ログイン</h2>
-            <form action="" method="post">
+            <form action="{{ route('user.login') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="email">メールアドレス</label>
                     <input type="text" id="email" name="email">
-                    @error('email')
-                        <p style="color: red;">{{ $message }}</p>
-                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="password">パスワード</label>
                     <input type="password" id="password" name="password">
-                    @error('password')
-                        <p style="color: red;">{{ $message }}</p>
-                    @enderror
                 </div>
+                @if ($errors->any())
+                     <p style="color: red;">メールアドレス、もしくはパスワードが間違っています</p>
+                @endif                
                 <button type="submit" class="submit-button">ログインする</button>
                 <button type="submit" class="submit-button">新規登録する</button>
             </form>

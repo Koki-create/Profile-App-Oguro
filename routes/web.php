@@ -41,14 +41,15 @@ Route::middleware('auth')->group(function (){
     ->name('user.top');
 
     Route::post('logout',[\App\Http\Controllers\User\UserController::class,'logout'])
-    ->name('user.logout');
+    ->name('logout');
 
 });
 
 Route::get('/login',[\App\Http\Controllers\User\UserController::class,'showLogin'])
-->name('login');
+->name('user.showLogin');
 
-Route::post('/login',[\App\Http\Controllers\User\UserController::class,'login']);
+Route::post('/login', \App\Http\Controllers\User\LoginController::class)
+->name('user.login');
 
 
 require __DIR__.'/auth.php';
