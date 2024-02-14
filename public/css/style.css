@@ -19,6 +19,13 @@ header {
   min-height: 8vh;
 }
 
+.centered-header {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-basis: 100%;
+}
+
 .header-content h1 {
   margin: 0;
   font-weight: 700;
@@ -95,8 +102,8 @@ input[type="password"] {
   color: white;
   cursor: default;
   margin-top: 4vh;
-  margin: 0 auto;
-  width: 9vw;
+  margin: 1vh auto;
+  width: 10vw;
   height: 5vh;
 }
 

@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <div class="header-content">
+        <div class="header-content centered-header">
             <h1>My Portfolio</h1>
         </div>
     </header>
