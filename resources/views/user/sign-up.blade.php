@@ -17,7 +17,6 @@
             <button type="submit" class="button_white">ログイン</button>
         </form>
     </header>
-
     <main>
         <section class="signup-section">
             <h2>新規登録</h2>
@@ -48,7 +47,6 @@
             </form>
         </section>
     </main>
-
     <footer>
         <p>portfolio site</p>
     </footer>
