@@ -29,11 +29,11 @@
                 </div>
                 @if ($errors->any())
                      <p style="color: red;">メールアドレス、もしくはパスワードが間違っています</p>
-                     @endif                
+                @endif                
                      <button type="submit" class="submit-button">ログインする</button>
                     </form>
                 </section>
-            <form action="{{ route('user.index') }}" method="get">
+            <form action="{{ route('user.showLogin') }}" method="get">
                 <button type="submit" class="submit-button">新規登録する</button>
             </form>
     </main>

@@ -16,11 +16,9 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-
-            return redirect()->intended('top');
+            return redirect()->intended('home');
         }
-        
+
         return back()->withErrors([
             'email' => 'メールアドレス、もしくはパスワードが間違っています',
             'password' => 'メールアドレス、もしくはパスワードが間違っています',

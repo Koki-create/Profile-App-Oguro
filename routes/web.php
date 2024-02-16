@@ -30,7 +30,6 @@ Route::middleware('auth')->group(function () {
 
 // User
 Route::get('/signup', [\App\Http\Controllers\User\UserController::class, 'showSignup'])
-->middleware('guset')
 ->name('user.showSignup');
 
 Route::post('user/create', \App\Http\Controllers\User\CreateController::class)
