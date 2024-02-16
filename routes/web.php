@@ -30,7 +30,8 @@ Route::middleware('auth')->group(function () {
 
 // User
 Route::get('/signup', [\App\Http\Controllers\User\UserController::class, 'showSignup'])
-->name('user.index');
+->middleware('guset')
+->name('user.showSignup');
 
 Route::post('user/create', \App\Http\Controllers\User\CreateController::class)
 ->name('user.create');
@@ -40,9 +41,6 @@ Route::middleware('auth')->group(function (){
     Route::get('/top',[\App\Http\Controllers\User\UserController::class,'top'])
     ->name('user.top');
 
-    Route::post('logout',[\App\Http\Controllers\User\UserController::class,'logout'])
-    ->name('logout');
-
 });
 
 Route::get('/login',[\App\Http\Controllers\User\UserController::class,'showLogin'])
@@ -51,5 +49,7 @@ Route::get('/login',[\App\Http\Controllers\User\UserController::class,'showLogin
 Route::post('/login', \App\Http\Controllers\User\LoginController::class)
 ->name('user.login');
 
+Route::post('logout',[\App\Http\Controllers\User\UserController::class,'logout'])
+->name('logout');
 
 require __DIR__.'/auth.php';
