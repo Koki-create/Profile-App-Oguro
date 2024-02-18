@@ -21,7 +21,12 @@
     <main>
     <div class="profile">
         <div class="profile-image">
-            <img src="{{\Illuminate\Support\Facades\Auth::user()->image}}" alt="プロフィール画像">
+            @if (\Illuminate\Support\Facades\Auth::user()->image)
+                <img src="{{\Illuminate\Support\Facades\Auth::user()->image}}" alt="プロフィール画像">
+            @else
+                <img src="/images/initial-image.png" alt="プロフィール画像">
+            @endif
+            <p>{{\Illuminate\Support\Facades\Auth::user()->name}}</p>
         </div>
         <div class="profile-info">
         <h2>自己紹介</h2>
@@ -33,10 +38,7 @@
         <h2>学習チャート</h2>       
         <button type="submit" class="submit-button">編集する</button>
     </div>
-    {{\Illuminate\Support\Facades\Auth::user()->image}}でログインしています。
-    {{\Illuminate\Support\Facades\Auth::user()->introduction}}でログインしています。
     </main>
-</body>
     <footer>
         <p>portfolio site</p>
     </footer>
