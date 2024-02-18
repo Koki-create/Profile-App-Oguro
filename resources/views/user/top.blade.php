@@ -5,11 +5,25 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Top</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <title>top</title>
 </head>
 <body>
+    <header>
+        <div class="header-content">
+            <h1>My Portfolio</h1>
+        </div>
+        <form action="{{ route('user.logout') }}" method="post">
+            @csrf
+            <button type="submit" class="button_white">ログアウト</button>
+        </form>
+    </header>
+    <main>
     {{\Illuminate\Support\Facades\Auth::user()->name}}でログインしています。
-
-        <button>ログアウト</button>
+    </main>
+</body>
+    <footer>
+        <p>portfolio site</p>
+    </footer>
 </body>
 </html>

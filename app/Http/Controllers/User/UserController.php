@@ -25,6 +25,7 @@ class UserController extends Controller
    {
        Auth::logout();
 
+    //    return redirect()->route('user.showLogin');
        return redirect('/login');
    }
 

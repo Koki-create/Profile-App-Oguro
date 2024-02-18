@@ -49,6 +49,6 @@ Route::post('/login', \App\Http\Controllers\User\LoginController::class)
 ->name('user.login');
 
 Route::post('logout',[\App\Http\Controllers\User\UserController::class,'logout'])
-->name('logout');
+->name('user.logout');
 
 require __DIR__.'/auth.php';
