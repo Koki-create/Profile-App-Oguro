@@ -126,3 +126,21 @@ footer p {
   font-size: 1vw;
   line-height: 1vh;
 }
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+  max-width: 60vw;
+  max-height:35vh;
+  margin-bottom: auto;
+}
+
+.profile-image {
+  max-width: 25vw;
+  max-height:25vh;  
+}
+
+.profile-info {
+  max-width: 35vw;
+  max-height:25vh;  
+}
