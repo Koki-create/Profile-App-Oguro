@@ -21,11 +21,11 @@
     <main>
     <div class="profile">
         <div class="profile-image">
-            <img src="path-to-image.png" alt="プロフィール画像">
+            <img src="{{\Illuminate\Support\Facades\Auth::user()->image}}" alt="プロフィール画像">
         </div>
         <div class="profile-info">
         <h2>自己紹介</h2>
-        <p>自分の趣味について情報をシェアする、自分の趣味に関連した人々と繋がる、自分の趣味に関連する人々を見つける、自分の趣味に関連する人々が見つける。</p>
+        <p>{{\Illuminate\Support\Facades\Auth::user()->introduction}}</p>
         <button type="submit" class="submit-button">自己紹介を編集する</button>
         </div>
     </div>
@@ -33,7 +33,8 @@
         <h2>学習チャート</h2>       
         <button type="submit" class="submit-button">編集する</button>
     </div>
-    {{\Illuminate\Support\Facades\Auth::user()->name}}でログインしています。
+    {{\Illuminate\Support\Facades\Auth::user()->image}}でログインしています。
+    {{\Illuminate\Support\Facades\Auth::user()->introduction}}でログインしています。
     </main>
 </body>
     <footer>
