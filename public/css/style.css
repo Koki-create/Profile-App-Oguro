@@ -91,9 +91,8 @@ input[type="password"] {
 }
 
 .submit-button {
-  display: block;
-  padding: 1vh 1vw;
   font-size: 0.8vw;
+  padding: 1vh 1vw;
   font-weight: 400;
   line-height: 1vh;
   border: none;
@@ -129,26 +128,48 @@ footer p {
 
 .profile {
   display: flex;
-  justify-content: space-between;
-  max-width: 60vw;
-  max-height:35vh;
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
+  height:35vh;
   margin-bottom: auto;
 }
 
 .profile-image {
-  max-width: 25vw;
-  max-height:25vh;  
+  width: 30vw;
+  height:45vh;
+  display: flex; /* Flexboxの表示設定を追加 */
+  flex-direction: column; /* 子要素を縦に並べる */
+  align-items: center; /* 子要素を中央揃えにする */
+  margin: auto;
+  flex: none;
 }
 
 .profile-image img {
-  max-width: 25vw;
-  max-height:25vh;  
+  width: 16vw;
+  height: 35vh;
   border-radius: 50%; /* 丸型にする */
   object-fit: cover;
-  background-color: #C4C4C4;
+  /* background-color: #C4C4C4; */
 }
 
 .profile-info {
   max-width: 35vw;
   max-height:25vh;  
+  margin: 0 2vw;
+  flex: none;
+}
+
+.profile-info h2 {
+  border-bottom: 2px solid #00000080;
+  padding-bottom: 5px; /* 文字とボーダーとの間隔を調整 */
+}
+
+.chart h2 {
+  display: block; /* ブロックレベル要素として振る舞うように明示的に設定 */
+  border-bottom: 2px solid #00000080;
+  padding-bottom: 5px; /* 文字とボーダーとの間隔を調整 */
+  width: 20vw;
+  margin-left: auto; /* 左マージンを自動調整 */
+  margin-right: auto; /* 右マージンを自動調整 */
 }
