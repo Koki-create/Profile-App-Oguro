@@ -145,8 +145,10 @@ footer p {
   display: flex; /* Flexboxの表示設定を追加 */
   flex-direction: column; /* 子要素を縦に並べる */
   align-items: center; /* 子要素を中央揃えにする */
-  margin: auto;
   flex: none;
+  margin-top: auto;
+  margin-bottom: -5vh; /* 下にずらす距離（負の値で上へ、正の値で下へ） */
+  margin-left: 3vw;
 }
 
 .profile-image img {
@@ -160,7 +162,7 @@ footer p {
 .profile-info {
   width: 35vw;
   height:25vh;  
-  margin: 0 2vw;
+  margin: 0 1vw;
   flex: none;
 }
 
