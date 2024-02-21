@@ -25,7 +25,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="introduction">自己紹介文</label>
-                    <textarea id="introduction" name="introduction"></textarea>
+                    <textarea id="introduction" name="introduction">{{\Illuminate\Support\Facades\Auth::user()->introduction}}</textarea>
                     <p>50文字以上、200文字以下で入力してください</p>
                     @error('introduction')
                         <p style="color: red;">{{ $message }}</p>
