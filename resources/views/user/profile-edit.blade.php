@@ -21,7 +21,7 @@
     <main>
         <section class="signup-section">
             <h2>自己紹介を編集する</h2>
-            <form action="{{ route('user.edit') }}" method="post">
+            <form action="{{ route('user.edit') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="introduction">自己紹介文</label>

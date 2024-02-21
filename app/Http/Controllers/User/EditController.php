@@ -17,29 +17,23 @@ class EditController extends Controller
         // 自己紹介文の更新
         $user = Auth::user();
         $user->introduction = $request->introduction();
-        $user->save();
-
+        
         // アバター画像の更新
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('images', 'public');
-    
+            
             // 古い画像を削除
             if ($user->image) {
                 Storage::disk('public')->delete($user->image);
             }
-    
-            // 新しい画像のパスを保存
-            $user->update(['image' => $path]);
+            
+            // 画像のパスを新たなものに書き換え
+            $user->image = $path;
         }
-    
+        
+        // 更新内容を保存
+        $user->save();
+
         return redirect()->route('user.top');
     }
-        
-
-
-
-
-
-
-
 }
