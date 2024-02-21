@@ -21,7 +21,7 @@
     <main>
         <section class="signup-section">
             <h2>自己紹介を編集する</h2>
-            <form action="" method="post">
+            <form action="{{ route('user.edit') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="introduction">自己紹介文</label>
@@ -34,9 +34,6 @@
                 <div class="form-group">
                     <label for="image">アバター画像</label>
                     <input type="file" id="image" name="image">
-                    @error('image')
-                        <p style="color: red;">{{ $message }}</p>
-                    @enderror
                 </div>
                 <button type="submit" class="submit-button">自己紹介を確定する</button>
             </form>

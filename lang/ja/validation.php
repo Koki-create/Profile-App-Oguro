@@ -136,6 +136,7 @@ return [
     'attributes' => [
         'name' => '氏名',
         'email' => 'メールアドレス',
-        'password' => 'パスワード'
+        'password' => 'パスワード',
+        'introduction' => '自己紹介'
     ],
 ];

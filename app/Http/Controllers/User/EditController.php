@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Requests\EditRequest;
+use App\Http\Requests\User\EditRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,7 +15,7 @@ class EditController extends Controller
     public function __invoke(EditRequest $request)
     {
         // 自己紹介文の更新
-        $user = Auth::user()
+        $user = Auth::user();
         $user->introduction = $request->introduction();
         $user->save();
 

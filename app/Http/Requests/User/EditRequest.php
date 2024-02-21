@@ -34,4 +34,19 @@ class EditRequest extends FormRequest
     {
         return $this->input('introduction')
     }
+
+        /**
+     * Get custom messages for validator errors.
+     *
+     * @return array
+     */
+    public function messages(): array
+    {
+        return [
+            'introduction.required' => '自己紹介は50文字以上200文字以下で入力してください',
+            'introduction.min' => '自己紹介は50文字以上200文字以下で入力してください',
+            'introduction.max' => '自己紹介は50文字以上200文字以下で入力してください',
+        ];
+    }
+
 }
