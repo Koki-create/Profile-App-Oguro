@@ -37,25 +37,25 @@ Route::post('user/create', \App\Http\Controllers\User\CreateController::class)
 
 Route::middleware('auth')->group(function (){
 
-    Route::get('/top',[\App\Http\Controllers\User\UserController::class,'top'])
+    Route::get('/top', [\App\Http\Controllers\User\UserController::class,'top'])
     ->name('user.top');
 
 });
 
-Route::get('/login',[\App\Http\Controllers\User\UserController::class,'showLogin'])
+Route::get('/login', [\App\Http\Controllers\User\UserController::class,'showLogin'])
 ->name('user.showLogin');
 
 Route::post('/login', \App\Http\Controllers\User\LoginController::class)
 ->name('user.login');
 
-Route::post('logout',[\App\Http\Controllers\User\UserController::class,'logout'])
+Route::post('logout', [\App\Http\Controllers\User\UserController::class,'logout'])
 ->name('user.logout');
 
-Route::get('user/showEdit', \App\Http\Controllers\User\UserController::class, 'showEdit')
+Route::get('user/showEdit', [\App\Http\Controllers\User\UserController::class, 'showEdit'])
 ->name('user.showEdit');
 
-Route::post('user/edit', \App\Http\Controllers\User\EditController::class)
-->name('user.edit');
+// Route::post('user/edit', \App\Http\Controllers\User\EditController::class)
+// ->name('user.edit');
 
 
 require __DIR__.'/auth.php';

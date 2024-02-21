@@ -25,13 +25,17 @@ class UserController extends Controller
    {
        Auth::logout();
 
-    //    return redirect()->route('user.showLogin');
-       return redirect('/login');
+       return redirect()->route('user.showLogin');
    }
 
    public function showLogin()
    {
        return view('user.login');
+   }
+
+   public function showEdit()
+   {
+       return view('user.profile-edit');
    }
 
 }
