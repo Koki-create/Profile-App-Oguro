@@ -29,4 +29,9 @@ class EditRequest extends FormRequest
                 ]
         ];
     }
+
+    public function introduction(): string
+    {
+        return $this->input('introduction')
+    }
 }
