@@ -11,7 +11,7 @@ class EditRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class EditRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'introduction' => [
+                'required',
+                'min:50',
+                'max:200'
+                ]
         ];
     }
 }
