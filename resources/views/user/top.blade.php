@@ -22,7 +22,7 @@
     <div class="profile">
         <div class="profile-image">
             @if (\Illuminate\Support\Facades\Auth::user()->image)
-                <img src="{{\Illuminate\Support\Facades\Auth::user()->image}}" alt="プロフィール画像">
+            <img src="{{ asset('storage/' . \Illuminate\Support\Facades\Auth::user()->image) }}" alt="プロフィール画像">
             @else
                 <img src="/images/initial-image.png" alt="プロフィール画像">
             @endif
