@@ -31,7 +31,10 @@
         <div class="profile-info">
         <h2>自己紹介</h2>
         <p>{{\Illuminate\Support\Facades\Auth::user()->introduction}}</p>
-        <button type="submit" class="submit-button profile-edit-button">自己紹介を編集する</button>
+        <form action="{{ route('user.showEdit') }}" method="get">
+            @csrf
+            <button type="submit" class="submit-button profile-edit-button">自己紹介を編集する</button>
+        </form>
         </div>
     </div>
     <div class="chart">

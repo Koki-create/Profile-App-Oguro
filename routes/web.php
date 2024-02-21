@@ -54,8 +54,8 @@ Route::post('logout', [\App\Http\Controllers\User\UserController::class,'logout'
 Route::get('user/showEdit', [\App\Http\Controllers\User\UserController::class, 'showEdit'])
 ->name('user.showEdit');
 
-// Route::post('user/edit', \App\Http\Controllers\User\EditController::class)
-// ->name('user.edit');
+Route::post('user/edit', \App\Http\Controllers\User\EditController::class)
+->name('user.edit');
 
 
 require __DIR__.'/auth.php';
