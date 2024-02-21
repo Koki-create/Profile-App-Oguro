@@ -18,6 +18,7 @@ ENV LOG_CHANNEL stderr
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # Add a line to create a symbolic link for Laravel storage
+RUN chmod -R 775 storage
 RUN mkdir -p storage
 RUN php artisan storage:link --force
 
