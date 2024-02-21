@@ -38,7 +38,7 @@
                         <p style="color: red;">{{ $message }}</p>
                     @enderror
                 </div>
-                <button type="submit" class="submit-button">自己紹介を編集する</button>
+                <button type="submit" class="submit-button">自己紹介を確定する</button>
             </form>
         </section>
     </main>
