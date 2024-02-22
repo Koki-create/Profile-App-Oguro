@@ -18,10 +18,10 @@ ENV LOG_CHANNEL stderr
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # RUN mkdir -p storage/framework/sessions \
-    storage/framework/views \
-    storage/framework/cache \
-    bootstrap/cache && \
-    chmod -R 775 storage bootstrap/cache
+    # storage/framework/views \
+    # storage/framework/cache \
+    # bootstrap/cache && \
+    # chmod -R 775 storage bootstrap/cache
 
 # Attempt to create the symbolic link
 WORKDIR /var/www/html
