@@ -17,9 +17,14 @@ ENV LOG_CHANNEL stderr
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-# Add a line to create a symbolic link for Laravel storage
-RUN chmod -R 775 storage
-RUN mkdir -p storage
+# Ensure the storage and cache directories are present and have the correct permissions
+RUN mkdir -p storage/framework/sessions \
+    storage/framework/views \
+    storage/framework/cache \
+    bootstrap/cache && \
+    chmod -R 775 storage bootstrap/cache
+
+# Attempt to create the symbolic link
 RUN php artisan storage:link --force
 
 CMD ["/start.sh"]
