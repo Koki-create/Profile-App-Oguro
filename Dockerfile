@@ -17,8 +17,8 @@ ENV LOG_CHANNEL stderr
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-# Ensure the storage and cache directories are present and have the correct permissions
-# RUN ls -la
+Ensure the storage and cache directories are present and have the correct permissions
+RUN ls -la
 
 RUN mkdir -p storage/framework/sessions \
     storage/framework/views \
