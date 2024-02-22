@@ -19,10 +19,12 @@
         </form>
     </header>
     <main>
-    @if (file_exists(public_path('storage'))) 
-    <h1>{{ echo 'シンボリックリンクが存在します。'; }}</h1>
+
+    @if (file_exists(public_path('storage')))
+    <h1>シンボリックリンクが存在します。</h1>
     @else
-    <h1>{{ echo 'シンボリックリンクが存在しません。'; }}</h1>
+    <h1>シンボリックリンクが存在しません。</h1>
+    @endif
 
     <div class="profile">
         <div class="profile-image">
