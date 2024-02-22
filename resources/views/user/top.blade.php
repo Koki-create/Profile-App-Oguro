@@ -19,6 +19,11 @@
         </form>
     </header>
     <main>
+    @if (file_exists(public_path('storage'))) 
+    <h1>{{ echo 'シンボリックリンクが存在します。'; }}</h1>
+    @else
+    <h1>{{ echo 'シンボリックリンクが存在しません。'; }}</h1>
+
     <div class="profile">
         <div class="profile-image">
             @if (\Illuminate\Support\Facades\Auth::user()->image)
