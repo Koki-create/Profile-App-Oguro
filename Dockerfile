@@ -2,6 +2,17 @@ FROM richarvey/nginx-php-fpm:latest
 
 COPY . .
 
+
+# 必要に応じてComposerをインストール
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+COPY . /var/www/html
+
+# Composer依存関係のインストール
+RUN composer install --no-dev --optimize-autoloader
+
+
+
 # Image config
 ENV SKIP_COMPOSER 1
 ENV WEBROOT /var/www/html/public
@@ -17,11 +28,17 @@ ENV LOG_CHANNEL stderr
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
+
 # RUN mkdir -p storage/framework/sessions \
     # storage/framework/views \
     # storage/framework/cache \
     # bootstrap/cache && \
     # chmod -R 775 storage bootstrap/cache
+
+# パーミッションの設定とディレクトリの作成
+RUN chmod -R 775 storage bootstrap/cache
+RUN mkdir -p storage/framework/{sessions,views,cache} bootstrap/cache
+
 
 # Attempt to create the symbolic link
 WORKDIR /var/www/html
