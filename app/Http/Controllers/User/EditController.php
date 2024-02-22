@@ -29,7 +29,7 @@ class EditController extends Controller
             }
             
             // 画像のパスを新たなものに書き換え
-            $user->image = $path;
+            $user->image = $url;
         }
         
         // 更新内容を保存
