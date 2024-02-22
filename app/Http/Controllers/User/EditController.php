@@ -21,7 +21,7 @@ class EditController extends Controller
         // アバター画像の更新
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('images', 'public');
-            $url = Storage::url($path);
+            // $url = Storage::url($path);
             
             // 古い画像を削除
             if ($user->image) {
