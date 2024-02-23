@@ -35,6 +35,7 @@
                     <label for="image">アバター画像</label>
                     <input type="file" id="image" name="image" class="hidden">
                     <label for="image" class="file-style">画像ファイルを添付する</label>
+                    <span id="file-name"></span>
                 </div>
                 <button type="submit" class="submit-button">自己紹介を確定する</button>
             </form>
@@ -43,5 +44,16 @@
     <footer>
         <p>portfolio site</p>
     </footer>
+    <script>
+    document.getElementById('image').addEventListener('change', function() {
+        var fileName = ''; // ファイル名を初期化
+        if (this.files && this.files.length > 0) {
+            // ファイルが選択されていれば、ファイル名を取得
+            fileName = this.files[0].name;
+        }
+        // ファイル名を表示する要素に設定
+        document.getElementById('file-name').textContent = fileName ? fileName : '選択されていません';
+    });
+    </script>
 </body>
 </html>
