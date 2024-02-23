@@ -13,7 +13,16 @@ return new class extends Migration
     {
         Schema::create('learning_data', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->smallInteger('category_id');
+            $table->string('name');
+            $table->smallInteger('hour')->default(0);
+            $table->smallInteger('month');
             $table->timestamps();
+
+            // 外部キー制約
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
