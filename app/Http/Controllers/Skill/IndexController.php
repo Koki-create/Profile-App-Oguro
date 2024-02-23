@@ -12,9 +12,6 @@ class IndexController extends Controller
      */
     public function __invoke(Request $request)
     {
-        public function showSkillIndex()
-        {
             return view('skill.index');
-        }
     }
 }
