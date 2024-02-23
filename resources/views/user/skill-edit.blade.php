@@ -20,13 +20,11 @@
     </header>
     <main>
         <section class="signup-section">
-            <h2>自己紹介を編集する</h2>
-            <form action="{{ route('user.edit') }}" method="post" enctype="multipart/form-data">
+            <form action="" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="introduction">自己紹介文</label>
                     <textarea id="introduction" name="introduction">{{\Illuminate\Support\Facades\Auth::user()->introduction}}</textarea>
-                    <p>50文字以上、200文字以下で入力してください</p>
                     @error('introduction')
                         <p style="color: red;">{{ $message }}</p>
                     @enderror

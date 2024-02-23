@@ -20,11 +20,12 @@
     </header>
     <main>
 
+    <!-- デバッグ用（シンボリックリンクの存在有無確認）
     @if (file_exists(public_path('storage')))
     <h1>シンボリックリンクが存在します。</h1>
     @else
     <h1>シンボリックリンクが存在しません。</h1>
-    @endif
+    @endif     -->
 
     <div class="profile">
         <div class="profile-image">
