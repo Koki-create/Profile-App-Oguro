@@ -32,7 +32,7 @@
             @if (\Illuminate\Support\Facades\Auth::user()->image)
             <img src="{{ asset('storage/' . \Illuminate\Support\Facades\Auth::user()->image) }}" alt="プロフィール画像">
             @else
-                <img src="/images/initial-image.png" alt="プロフィール画像">
+            <div class="default-profile-image"></div>
             @endif
             <p>{{\Illuminate\Support\Facades\Auth::user()->name}}</p>
         </div>

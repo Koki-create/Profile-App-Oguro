@@ -166,9 +166,15 @@ footer p {
 .profile-image img {
   width: 16vw;
   height: 35vh;
-  border-radius: 50%; /* 丸型にする */
+  border-radius: 50%;
   object-fit: cover;
-  /* background-color: #C4C4C4; */
+}
+
+.default-profile-image {
+  width: 16vw;
+  height: 35vh;
+  border-radius: 50%;
+  background-color: #C4C4C4;
 }
 
 .profile-info {
