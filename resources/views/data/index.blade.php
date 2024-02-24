@@ -36,12 +36,9 @@
             </form>
 
             </div>
-            <div class="skills-item">
+            <div class="data-item">
                 <label for="ruby">Ruby</label>
-                <select id="ruby" name="ruby">
-                    <option value="40" selected>40</option>
-                    <!-- 他の選択肢を追加 -->
-                </select>
+                <input type="number" id="ruby" name="ruby" min="0">
                 <button type="submit" class="save-button">学習時間を保存する</button>
                 <button type="submit" class="delete-button">削除する</button>
             </div>
