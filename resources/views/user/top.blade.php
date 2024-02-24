@@ -47,7 +47,7 @@
     </div>
     <div class="chart">
         <h2>学習チャート</h2>
-        <form action="{{ route('skill.index') }}" method="get">
+        <form action="{{ route('data.index') }}" method="get">
             @csrf
             <button type="submit" class="submit-button">編集する</button>
         </form>

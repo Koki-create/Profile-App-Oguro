@@ -57,8 +57,8 @@ Route::get('user/showEdit', [\App\Http\Controllers\User\UserController::class, '
 Route::post('user/edit', \App\Http\Controllers\User\EditController::class)
 ->name('user.edit');
 
-Route::get('skill/index', \App\Http\Controllers\Skill\IndexController::class)
-->name('skill.index');
+Route::get('data/index', \App\Http\Controllers\Data\IndexController::class)
+->name('data.index');
 
 
 require __DIR__.'/auth.php';

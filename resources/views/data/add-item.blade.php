@@ -24,15 +24,15 @@
             <form action="" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="skill-item">項目名</label>
-                    <input type="text" id="skill-item" name="skill-item"></input>
-                    @error('skill-item')
+                    <label for="data-item">項目名</label>
+                    <input type="text" id="data-item" name="data-item"></input>
+                    @error('data-item')
                         <p style="color: red;">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="skill-hours">学習時間</label>
-                    <input type="text" id="skill-hours" name="skill-hours">
+                    <label for="hours">学習時間</label>
+                    <input type="text" id="hours" name="hours">
                     <p>分単位で入力してください。</p>
                 </div>
                 <button type="submit" class="submit-button">追加する</button>

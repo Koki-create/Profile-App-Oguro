@@ -29,7 +29,11 @@
         <section class="category-section">
             <h2 class="section-title">バックエンド</h2>
             <div class="add-item-button-container">
-            <button type="button" class="submit-button">項目を追加する</button>
+            <!-- <form action="{{ route('data.add') }}" method="get"> -->
+                @csrf
+                <button type="button" class="add-item-button">項目を追加する</button>
+            </form>
+
             </div>
             <div class="skills-item">
                 <label for="ruby">Ruby</label>
@@ -40,23 +44,6 @@
                 <button type="submit" class="save-button">学習時間を保存する</button>
                 <button type="submit" class="delete-button">削除する</button>
             </div>
-        </section>
-        <section class="signup-section">
-            <form action="" method="post" enctype="multipart/form-data">
-                @csrf
-                <div class="form-group">
-                    <label for="introduction">自己紹介文</label>
-                    <textarea id="introduction" name="introduction">{{\Illuminate\Support\Facades\Auth::user()->introduction}}</textarea>
-                    @error('introduction')
-                        <p style="color: red;">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="image">アバター画像</label>
-                    <input type="file" id="image" name="image">
-                </div>
-                <button type="submit" class="submit-button">自己紹介を確定する</button>
-            </form>
         </section>
     </main>
     <footer>
