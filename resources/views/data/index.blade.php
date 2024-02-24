@@ -21,9 +21,23 @@
     <main>
         <section class="month-section">
             <select name="month" class="month-pulldown">
-                <option value="2" selected>2月</option>
-                <option value="1">1月</option>
-                <option value="12">12月</option>
+                @php
+                    $startMonth = $currentMonth - 2;
+                    $endMonth = $currentMonth;
+                @endphp
+
+                @for ($i = $startMonth; $i <= $endMonth; $i++)
+                    @php
+                        // 年をまたぐ場合、月の値を調整
+                        $monthValue = $i;
+                        if ($monthValue < 1) {
+                            $monthValue += 12;
+                        }
+                    @endphp
+                    <option value="{{ $monthValue }}" {{ $monthValue == $currentMonth ? 'selected' : '' }}>
+                        {{ $monthValue }}月
+                    </option>
+                @endfor
             </select>
         </section>
         <section class="category-section">
