@@ -20,7 +20,7 @@
     </header>
     <main>
         <section class="signup-section">
-            <h2>{カテゴリー名}に項目を追加</h2>
+            <h2>{{ $category }}に項目を追加</h2>
             <form action="" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">

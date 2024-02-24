@@ -60,5 +60,7 @@ Route::post('user/edit', \App\Http\Controllers\User\EditController::class)
 Route::get('data/index', \App\Http\Controllers\Data\IndexController::class)
 ->name('data.index');
 
+Route::get('data/add/index', \App\Http\Controllers\Data\Add\IndexController::class)
+->name('data.showAdd');
 
 require __DIR__.'/auth.php';

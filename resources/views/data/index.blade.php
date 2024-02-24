@@ -29,9 +29,10 @@
         <section class="category-section">
             <h2 class="section-title">バックエンド</h2>
             <div class="add-item-button-container">
-            <!-- <form action="{{ route('data.add') }}" method="get"> -->
+            <form action="{{ route('data.showAdd') }}" method="get">
                 @csrf
-                <button type="button" class="add-item-button">項目を追加する</button>
+                <input type="hidden" name="category" value="バックエンド">
+                <button type="submit" class="add-item-button">項目を追加する</button>
             </form>
 
             </div>
