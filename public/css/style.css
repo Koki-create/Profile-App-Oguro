@@ -240,3 +240,86 @@ footer p {
 .file-style:hover {
   background-color: #5c5b5b; /* ホバー時の背景色 */
 }
+
+.category-section {
+  border: 1.2px solid #00000080; /* グレーの枠線 */
+  padding: 1vh 2vw; /* 内側の余白 */
+  border-radius: 4px;
+  width: 50vw;
+}
+
+.category-section h3 {
+  width: 16vw;
+  border-bottom: 2px solid #00000080;
+  padding-bottom: 5px; /* 文字とボーダーとの間隔を調整 */
+}
+
+.category-section table {
+  width: 100%; /* テーブルの幅をセクション全体に */
+  border-collapse: collapse; /* セルのボーダーを結合する */
+  margin-bottom: 20px; /* ボタンとの間隔を開ける */
+  box-shadow: 
+  0 1px 5px rgba(0,0,0,0.12), /* 1番目のシャドウ */
+  0 2px 2px rgba(0,0,0,0.14), /* 2番目のシャドウ */
+  0 3px 1px -2px rgba(0,0,0,0.20); /* 3番目のシャドウ */
+}
+
+.category-section th,
+.category-section td {
+  border-top: 1px solid #ccc; /* セルにグレーの枠線を追加 */
+  border-bottom: 1px solid #ccc; /* セルにグレーの枠線を追加 */
+  padding: 10px; /* セルの内側の余白 */
+  text-align: left; /* テキストを左揃えに */
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 0.8vw;
+  letter-spacing: 0.15px;
+  font-weight: 400;
+}
+
+.save-button {
+  color:#1B5678;
+  border-color: #1B5678;
+  border: 1px solid #1B5678;
+  border-radius: 2px;
+  font-size: 0.8vw;
+  background-color: #fff;
+  font-weight: 400;
+  padding: 0.4vh 0.8vw;
+}
+
+.delete-button {
+  color: white;
+  border: none;
+  border-radius: 2px;
+  background-color: #EE6969;
+  font-size: 0.8vw;
+  font-weight: 400;
+  padding: 0.4vh 0.8vw;
+}
+
+.month-section {
+  align-self: flex-start; /* 左端に寄せる */
+  width: 100%; /* セクションの幅を最大にする */
+  display: flex;
+  margin-bottom: 1vh;
+  font-weight: 700;
+}
+
+
+.month-pulldown {
+  /* 必要なスタイルをここに追加 */
+  margin-right: auto; /* 右側に余白を設ける */
+}
+
+input[type="number"] {
+  border: 1px solid #ccc; /* セルにグレーの枠線を追加 */
+  border-radius: 2px;
+  width: 8vw;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

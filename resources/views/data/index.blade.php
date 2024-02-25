@@ -41,21 +41,44 @@
             </select>
         </section>
         <section class="category-section">
-            <h2 class="section-title">バックエンド</h2>
-            <div class="add-item-button-container">
-            <form action="{{ route('data.showAdd') }}" method="get">
-                @csrf
-                <input type="hidden" name="category" value="バックエンド">
-                <button type="submit" class="add-item-button">項目を追加する</button>
-            </form>
-
+            <div class="category-header">
+                <h3>バックエンド</h3>
+                <form action="{{ route('data.showAdd') }}" method="get">
+                    @csrf
+                    <input type="hidden" name="category" value="バックエンド">
+                    <button type="submit" class="submit-button">項目を追加する</button>
+                </form>
             </div>
-            <div class="data-item">
-                <label for="ruby">Ruby</label>
-                <input type="number" id="ruby" name="ruby" min="0">
-                <button type="submit" class="save-button">学習時間を保存する</button>
-                <button type="submit" class="delete-button">削除する</button>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>項目名</th>
+                        <th>学習時間</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ruby</td>
+                        <td><input type="number" id="ruby" name="ruby" min="0"></td>
+                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
+                        <td><button type="submit" class="delete-button">削除する</button></td>
+                    </tr>
+                    <tr>
+                        <td>Rails</td>
+                        <td><input type="number" id="rails" name="rails" min="0"></td>
+                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
+                        <td><button type="submit" class="delete-button">削除する</button></td>
+                    </tr>
+                    <tr>
+                        <td>MySQL</td>
+                        <td><input type="number" id="mysql" name="mysql" min="0"></td>
+                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
+                        <td><button type="submit" class="delete-button">削除する</button></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </main>
     <footer>
