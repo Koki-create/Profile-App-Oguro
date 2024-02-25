@@ -80,6 +80,80 @@
                 </tbody>
             </table>
         </section>
+        <section class="category-section">
+            <div class="category-header">
+                <h3>フロントエンド</h3>
+                <form action="{{ route('data.showAdd') }}" method="get">
+                    @csrf
+                    <input type="hidden" name="category" value="フロントエンド">
+                    <button type="submit" class="submit-button">項目を追加する</button>
+                </form>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>項目名</th>
+                        <th>学習時間</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML</td>
+                        <td><input type="number" id="ruby" name="ruby" min="0"></td>
+                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
+                        <td><button type="submit" class="delete-button">削除する</button></td>
+                    </tr>
+                    <tr>
+                        <td>CSS</td>
+                        <td><input type="number" id="rails" name="rails" min="0"></td>
+                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
+                        <td><button type="submit" class="delete-button">削除する</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="category-section">
+            <div class="category-header">
+                <h3>インフラ</h3>
+                <form action="{{ route('data.showAdd') }}" method="get">
+                    @csrf
+                    <input type="hidden" name="category" value="インフラ">
+                    <button type="submit" class="submit-button">項目を追加する</button>
+                </form>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>項目名</th>
+                        <th>学習時間</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Heroku</td>
+                        <td><input type="number" id="ruby" name="ruby" min="0"></td>
+                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
+                        <td><button type="submit" class="delete-button">削除する</button></td>
+                    </tr>
+                    <tr>
+                        <td>AWS</td>
+                        <td><input type="number" id="rails" name="rails" min="0"></td>
+                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
+                        <td><button type="submit" class="delete-button">削除する</button></td>
+                    </tr>
+                    <tr>
+                        <td>Firebase</td>
+                        <td><input type="number" id="rails" name="rails" min="0"></td>
+                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
+                        <td><button type="submit" class="delete-button">削除する</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
     <footer>
         <p>portfolio site</p>
