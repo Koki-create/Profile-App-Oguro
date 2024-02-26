@@ -20,7 +20,7 @@
     </header>
     <main>
         <section class="month-section">
-            <select name="month" class="month-pulldown">
+            <select name="month" id="month-select" class="month-pulldown">
                 @php
                     $startMonth = $currentMonth - 2;
                     $endMonth = $currentMonth;
@@ -44,9 +44,8 @@
             <div class="category-header">
                 <h3>バックエンド</h3>
                 <form action="{{ route('data.showAdd') }}" method="get">
-                    @csrf
                     <input type="hidden" name="category" value="バックエンド">
-                    <input type="hidden" name="month" id="month" value="">
+                    <input type="hidden" name="month" class="month-hidden" value="">
                     <button type="submit" class="submit-button">項目を追加する</button>
                 </form>
             </div>
@@ -85,9 +84,8 @@
             <div class="category-header">
                 <h3>フロントエンド</h3>
                 <form action="{{ route('data.showAdd') }}" method="get">
-                    @csrf
                     <input type="hidden" name="category" value="フロントエンド">
-                    <input type="hidden" name="month" value="">
+                    <input type="hidden" name="month" class="month-hidden" value="">
                     <button type="submit" class="submit-button">項目を追加する</button>
                 </form>
             </div>
@@ -103,13 +101,13 @@
                 <tbody>
                     <tr>
                         <td>HTML</td>
-                        <td><input type="number" id="ruby" name="ruby" min="0"></td>
+                        <td><input type="number" id="html" name="html" min="0"></td>
                         <td><button type="submit" class="save-button">学習時間を保存する</button></td>
                         <td><button type="submit" class="delete-button">削除する</button></td>
                     </tr>
                     <tr>
                         <td>CSS</td>
-                        <td><input type="number" id="rails" name="rails" min="0"></td>
+                        <td><input type="number" id="css" name="css" min="0"></td>
                         <td><button type="submit" class="save-button">学習時間を保存する</button></td>
                         <td><button type="submit" class="delete-button">削除する</button></td>
                     </tr>
@@ -120,9 +118,8 @@
             <div class="category-header">
                 <h3>インフラ</h3>
                 <form action="{{ route('data.showAdd') }}" method="get">
-                    @csrf
                     <input type="hidden" name="category" value="インフラ">
-                    <input type="hidden" name="month" id="month" value="">
+                    <input type="hidden" name="month" class="month-hidden" value="">
                     <button type="submit" class="submit-button">項目を追加する</button>
                 </form>
             </div>
@@ -138,19 +135,19 @@
                 <tbody>
                     <tr>
                         <td>Heroku</td>
-                        <td><input type="number" id="ruby" name="ruby" min="0"></td>
+                        <td><input type="number" id="heroku" name="heroku" min="0"></td>
                         <td><button type="submit" class="save-button">学習時間を保存する</button></td>
                         <td><button type="submit" class="delete-button">削除する</button></td>
                     </tr>
                     <tr>
                         <td>AWS</td>
-                        <td><input type="number" id="rails" name="rails" min="0"></td>
+                        <td><input type="number" id="aws" name="aws" min="0"></td>
                         <td><button type="submit" class="save-button">学習時間を保存する</button></td>
                         <td><button type="submit" class="delete-button">削除する</button></td>
                     </tr>
                     <tr>
                         <td>Firebase</td>
-                        <td><input type="number" id="rails" name="rails" min="0"></td>
+                        <td><input type="number" id="firebase" name="firebase" min="0"></td>
                         <td><button type="submit" class="save-button">学習時間を保存する</button></td>
                         <td><button type="submit" class="delete-button">削除する</button></td>
                     </tr>
@@ -165,10 +162,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             const monthSelect = document.getElementById('month-select');
             monthSelect.addEventListener('change', function() {
-                // すべてのhiddenフィールドの値を更新
                 const monthValue = monthSelect.value;
-                document.getElementById('month').value = monthValue;
+                // querySelectorAllを使用して、クラス名が'month-hidden'のすべてのinput要素を取得し、valueを更新
+                document.querySelectorAll('.month-hidden').forEach(function(input) {
+                    input.value = monthValue;
+                });
             });
+            // ページロード時に現在選択されている月の値を設定
+            document.querySelector('.month-hidden').value = monthSelect.value;
         });
     </script>
 </body>

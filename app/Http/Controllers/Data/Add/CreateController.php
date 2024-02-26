@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Data\Add;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Requests\Data\CreateRequest;
+use App\Http\Requests\Data\CreateRequest;
 use App\Models\Data;
 
 class CreateController extends Controller
