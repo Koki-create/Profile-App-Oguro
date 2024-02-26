@@ -40,10 +40,30 @@
                 <input type="hidden" name="month" value="{{ $month }}">
                 <input type="hidden" name="category" value="{{ $category }}">
             </form>
+        <div class="modal" tabindex="-1" role="dialog" id="completionModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-body">
+                <p>{カテゴリー名}に{項目名}を{学習時間}分で追加しました！</p>
+            </div>
+            <form action="{{ route('data.index') }}" method="get">
+                <button type="button" class="submit-button" data-dismiss="modal">編集ページに戻る</button>
+            </form>
+            </div>
+        </div>
+        </div>
         </section>
     </main>
     <footer>
         <p>portfolio site</p>
     </footer>
+    <script>
+        $(document).ready(function() {
+            // セッション変数が設定されているか確認
+            @if (session('create_complete'))
+            // モーダルを表示
+            $('#completionModal').modal('show');
+            @endif
+        });
+    </script>
 </body>
 </html>

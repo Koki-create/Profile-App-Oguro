@@ -28,8 +28,9 @@ class CreateController extends Controller
         $data->name = $request->dataItem();
         $data->time = $request->time();
         $data->month = $request->month;
-        
         $data->save();
-        // return redirect()->route('some.route');
+
+        session()->flash('create_complete', true);
+        return redirect()->back();
     }
 }
