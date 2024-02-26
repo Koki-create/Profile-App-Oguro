@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('user_id');
             $table->smallInteger('category_id');
             $table->string('name');
-            $table->smallInteger('hour')->default(0);
+            $table->smallInteger('time')->default(0);
             $table->smallInteger('month');
             $table->timestamps();
 

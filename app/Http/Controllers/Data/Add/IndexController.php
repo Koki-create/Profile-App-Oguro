@@ -13,6 +13,10 @@ class IndexController extends Controller
     public function __invoke(Request $request)
     {
         $category = $request->category;
-        return view('data.add')->with('category', $category);
+        $month = $request->month;
+        return view('data.add', [
+            'category' => $category,
+            'month' => $month
+        ]);
     }
 }

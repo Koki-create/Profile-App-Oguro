@@ -46,6 +46,7 @@
                 <form action="{{ route('data.showAdd') }}" method="get">
                     @csrf
                     <input type="hidden" name="category" value="バックエンド">
+                    <input type="hidden" name="month" id="month" value="">
                     <button type="submit" class="submit-button">項目を追加する</button>
                 </form>
             </div>
@@ -86,6 +87,7 @@
                 <form action="{{ route('data.showAdd') }}" method="get">
                     @csrf
                     <input type="hidden" name="category" value="フロントエンド">
+                    <input type="hidden" name="month" value="">
                     <button type="submit" class="submit-button">項目を追加する</button>
                 </form>
             </div>
@@ -120,6 +122,7 @@
                 <form action="{{ route('data.showAdd') }}" method="get">
                     @csrf
                     <input type="hidden" name="category" value="インフラ">
+                    <input type="hidden" name="month" id="month" value="">
                     <button type="submit" class="submit-button">項目を追加する</button>
                 </form>
             </div>
@@ -158,5 +161,15 @@
     <footer>
         <p>portfolio site</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const monthSelect = document.getElementById('month-select');
+            monthSelect.addEventListener('change', function() {
+                // すべてのhiddenフィールドの値を更新
+                const monthValue = monthSelect.value;
+                document.getElementById('month').value = monthValue;
+            });
+        });
+    </script>
 </body>
 </html>

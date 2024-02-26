@@ -63,4 +63,8 @@ Route::get('data/index', \App\Http\Controllers\Data\IndexController::class)
 Route::get('data/add/index', \App\Http\Controllers\Data\Add\IndexController::class)
 ->name('data.showAdd');
 
+Route::post('data/create', \App\Http\Controllers\Data\Add\CreateController::class)
+->name('data.create');
+
+
 require __DIR__.'/auth.php';

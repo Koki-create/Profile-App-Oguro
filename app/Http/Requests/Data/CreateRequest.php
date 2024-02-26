@@ -25,4 +25,15 @@ class CreateRequest extends FormRequest
             //
         ];
     }
+    
+    public function dataItem()
+    {
+        return $this->input('data-item');
+    }
+
+    public function time()
+    {
+        return $this->input('hours');
+    }
+
 }
