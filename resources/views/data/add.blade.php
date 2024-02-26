@@ -46,10 +46,11 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     @if(session()->has('create_complete'))
-                        <p>{{ session('category') }}に{{ session('data_item') }}を{{ session('time') }}分で追加しました！</p>
+                        <p>{{ session('category') }}に{{ session('data_item') }}を<br>
+                            {{ session('time') }}分で追加しました！</p>
                         @endif
                     <form action="{{ route('data.index') }}" method="get">
-                        <button type="button" class="submit-button" data-dismiss="modal">編集ページに戻る</button>
+                        <button type="submit" class="submit-button">編集ページに戻る</button>
                     </form>
                 </div>
             </div>

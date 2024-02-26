@@ -361,16 +361,26 @@ input[type="number"] {
   align-items: center;
 }
 
+.modal fade {
+  padding: 5vh;
+  width: 44vw;
+  height: 22vh;
+}
+
 .modal-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: 'Roboto', sans-serif;
+  margin-top: auto;
+  margin-bottom: auto;
+  max-height: 60vh;
+  padding: 3rem; /* 内容に余白を与える */
 }
 
 .modal-content p {
   font-weight: 700;
-  font-size: 2vw;
+  font-size: 1vw;
 }
 
 #time {
@@ -379,4 +389,18 @@ input[type="number"] {
   border: none;
   border-bottom: 1px solid #ccc;
   box-sizing: border-box;
+}
+
+.modal-dialog {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - (1rem * 2));
+}
+
+.modal-dialog .modal-content {
+  /* モーダルの内容が画面の大きさによっては縦に伸びすぎないようにする */
+  overflow-y: auto; /* 内容が多い場合はスクロール */
+  max-height: calc(100vh - (1rem * 2)); /* 上下のマージンを考慮した最大の高さ */
 }
