@@ -19,6 +19,23 @@ header {
   min-height: 8vh;
 }
 
+.custom-header {
+  padding: 2vh 2vw;
+  background: #1B5678;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 12vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.custom-header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2vw;
+}
+
 .centered-header {
   text-align: center;
   display: flex;
@@ -130,10 +147,22 @@ textarea {
 footer {
   background: #1B5678;
   color: #FFFFFF;
-  min-height: 1vh;;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Roboto', sans-serif;
+  min-height: 1vh;;
+}
+
+.custom-footer {
+  background: #1B5678;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 2vh;
+  min-height: 1vh;;
 }
 
 footer p {
@@ -141,6 +170,12 @@ footer p {
   font-size: 1vw;
   line-height: 1vh;
 }
+
+.custom-footer p {
+  font-weight: 400;
+  font-size: 1vw;
+  line-height: 1vh;
+  }
 
 .profile {
   display: flex;

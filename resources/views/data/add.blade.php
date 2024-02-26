@@ -6,13 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/css/style.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>profile-edit</title>
 </head>
 <body>
-    <header>
-        <div class="header-content">
+    <header class="custom-header">
             <h1>My Portfolio</h1>
-        </div>
         <form action="{{ route('user.logout') }}" method="post">
             @csrf
             <button type="submit" class="button_white">ログアウト</button>
@@ -40,20 +41,23 @@
                 <input type="hidden" name="month" value="{{ $month }}">
                 <input type="hidden" name="category" value="{{ $category }}">
             </form>
-        <div class="modal" tabindex="-1" role="dialog" id="completionModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-body">
-                <p>{カテゴリー名}に{項目名}を{学習時間}分で追加しました！</p>
-            </div>
-            <form action="{{ route('data.index') }}" method="get">
-                <button type="button" class="submit-button" data-dismiss="modal">編集ページに戻る</button>
-            </form>
+        <!-- モーダル開始 -->
+        <div class="modal fade" id="completionModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    @if(session()->has('create_complete'))
+                        <p>{{ session('category') }}に{{ session('data_item') }}を{{ session('time') }}分で追加しました！</p>
+                        @endif
+                    <form action="{{ route('data.index') }}" method="get">
+                        <button type="button" class="submit-button" data-dismiss="modal">編集ページに戻る</button>
+                    </form>
+                </div>
             </div>
         </div>
-        </div>
+        <!-- モーダル終了 -->
         </section>
     </main>
-    <footer>
+    <footer class="custom-footer">
         <p>portfolio site</p>
     </footer>
     <script>

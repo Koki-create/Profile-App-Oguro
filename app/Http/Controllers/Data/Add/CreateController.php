@@ -31,6 +31,10 @@ class CreateController extends Controller
         $data->save();
 
         session()->flash('create_complete', true);
+        session()->flash('category', $category);
+        session()->flash('data_item', $request->input('data-item'));
+        session()->flash('time', $request->input('time'));
+    
         return redirect()->back();
     }
 }
