@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Data;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class CreateRequest extends FormRequest
 {
@@ -22,9 +23,42 @@ class CreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'data-item' => [
+                'required',
+                'max:50',
+                Rule::unique('learning_data', 'name')
+                    ->where('user_id', $this->user()->id)
+                    ->where('month', $this->input('month')),
+            ],
+            'time' => [
+                'required',
+                'numeric',
+                'min:0'
+                ]
         ];
     }
+
+    public function withValidator(Validator $validator)
+    {
+        $validator->after(function ($validator) {
+            if ($validator->fails()) {
+                $validator->errors()->add('data-item', $this->dataItem() . 'は既に登録されています。');
+            }
+        });
+    }
+
+    public function messages(): array
+    {
+        return [
+            'data-item.required' => '項目名は必ず入力してください',
+            'data-item.max' => '項目名は50文字以内で入力してください',
+            // 'data-item.unique' => 'この項目名は既に登録されています',
+            'time.required' => '学習時間は必ず入力してください',
+            'time.numeric' => '学習時間は0以上の数字で入力してください',
+            'time.min' => '学習時間は0以上の数字で入力してください',
+        ];
+    }
+
     
     public function dataItem()
     {
