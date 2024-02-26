@@ -43,6 +43,5 @@ RUN mkdir -p storage/framework/{sessions,views,cache} bootstrap/cache
 # Attempt to create the symbolic link
 WORKDIR /var/www/html
 RUN php artisan storage:link --force
-RUN php artisan migrate:refresh --force
 
 CMD ["/start.sh"]
