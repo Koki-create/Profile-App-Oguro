@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group">
                     <label for="time">学習時間</label>
-                    <input type="text" id="time" name="time">
+                    <input type="number" id="time" name="time" min="0">
                     <p>分単位で入力してください。</p>
                 </div>
                 <button type="submit" class="submit-button">追加する</button>

@@ -360,3 +360,23 @@ input[type="number"] {
   justify-content: space-between;
   align-items: center;
 }
+
+.modal-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.modal-content p {
+  font-weight: 700;
+  font-size: 2vw;
+}
+
+#time {
+  width: 100%;
+  padding: 0.5vh;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
