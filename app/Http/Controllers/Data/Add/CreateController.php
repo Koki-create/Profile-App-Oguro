@@ -25,7 +25,7 @@ class CreateController extends Controller
         $data = new Data;
         $data->user_id = $request->userId;
         $data->category_id = $categoryId;
-        $data->name = $request->dataItem();
+        $data->name = $request->data_item;
         $data->time = $request->time();
         $data->month = $request->month;
         $data->save();

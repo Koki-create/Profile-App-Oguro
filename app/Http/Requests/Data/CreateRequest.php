@@ -40,9 +40,11 @@ class CreateRequest extends FormRequest
 
     public function withValidator(\Illuminate\Contracts\Validation\Validator $validator)
     {
+        $data_item = $this->input('data_item');
+        
         $validator->after(function ($validator) {
             if ($validator->fails()) {
-                $validator->errors()->add('data_item', $this->dataItem() . 'は既に登録されています。');
+                $validator->errors()->add('data_item', $data_item . 'は既に登録されています。');
             }
         });
     }
@@ -57,12 +59,6 @@ class CreateRequest extends FormRequest
             'time.numeric' => '学習時間は0以上の数字で入力してください',
             'time.min' => '学習時間は0以上の数字で入力してください',
         ];
-    }
-
-    
-    public function dataItem()
-    {
-        return $this->input('data_item');
     }
 
     public function time()
