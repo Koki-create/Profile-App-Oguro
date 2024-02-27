@@ -61,9 +61,4 @@ class CreateRequest extends FormRequest
         ];
     }
 
-    public function time()
-    {
-        return $this->input('time');
-    }
-
 }
