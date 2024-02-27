@@ -22,7 +22,7 @@
     <main>
         <section class="signup-section">
             <h2>{{ $category }}に項目を追加</h2>
-            <h2>{{ $month }}</h2>
+            <h2>{{ \Illuminate\Support\Facades\Auth::user()->id }}</h2>
             <form action="{{ route('data.create') }}" method="post">
                 @csrf
                 <div class="form-group">
