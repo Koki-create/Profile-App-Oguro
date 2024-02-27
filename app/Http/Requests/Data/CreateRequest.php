@@ -23,7 +23,7 @@ class CreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'data-item' => [
+            'data_item' => [
                 'required',
                 'max:50',
                 Rule::unique('learning_data', 'name')
@@ -38,11 +38,11 @@ class CreateRequest extends FormRequest
         ];
     }
 
-    public function withValidator(Validator $validator)
+    public function withValidator(\Illuminate\Contracts\Validation\Validator $validator)
     {
         $validator->after(function ($validator) {
             if ($validator->fails()) {
-                $validator->errors()->add('data-item', $this->dataItem() . 'は既に登録されています。');
+                $validator->errors()->add('data_item', $this->dataItem() . 'は既に登録されています。');
             }
         });
     }
@@ -50,9 +50,9 @@ class CreateRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'data-item.required' => '項目名は必ず入力してください',
-            'data-item.max' => '項目名は50文字以内で入力してください',
-            // 'data-item.unique' => 'この項目名は既に登録されています',
+            'data_item.required' => '項目名は必ず入力してください',
+            'data_item.max' => '項目名は50文字以内で入力してください',
+            // 'data_item.unique' => 'この項目名は既に登録されています',
             'time.required' => '学習時間は必ず入力してください',
             'time.numeric' => '学習時間は0以上の数字で入力してください',
             'time.min' => '学習時間は0以上の数字で入力してください',
@@ -62,7 +62,7 @@ class CreateRequest extends FormRequest
     
     public function dataItem()
     {
-        return $this->input('data-item');
+        return $this->input('data_item');
     }
 
     public function time()

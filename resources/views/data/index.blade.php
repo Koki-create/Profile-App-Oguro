@@ -168,8 +168,9 @@
                     input.value = monthValue;
                 });
             });
-            // ページロード時に現在選択されている月の値を設定
-            document.querySelector('.month-hidden').value = monthSelect.value;
+            // ページロード時に現在選択されている月の値を全ての.month-hiddenに設定
+        document.querySelectorAll('.month-hidden').forEach(function(input) {
+            input.value = monthSelect.value;
         });
     </script>
 </body>

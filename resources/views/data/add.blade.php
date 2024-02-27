@@ -22,12 +22,13 @@
     <main>
         <section class="signup-section">
             <h2>{{ $category }}に項目を追加</h2>
+            <h2>{{ $month }}</h2>
             <form action="{{ route('data.create') }}" method="post">
                 @csrf
                 <div class="form-group">
-                    <label for="data-item">項目名</label>
-                    <input type="text" id="data-item" name="data-item"></input>
-                    @error('data-item')
+                    <label for="data_item">項目名</label>
+                    <input type="text" id="data_item" name="data_item"></input>
+                    @error('data_item')
                         <p style="color: red;">{{ $message }}</p>
                     @enderror
                 </div>
@@ -35,6 +36,9 @@
                     <label for="time">学習時間</label>
                     <input type="number" id="time" name="time" min="0">
                     <p>分単位で入力してください。</p>
+                    @error('time')
+                        <p style="color: red;">{{ $message }}</p>
+                    @enderror
                 </div>
                 <button type="submit" class="submit-button">追加する</button>
                 <input type="hidden" name="userId" value="{{ \Illuminate\Support\Facades\Auth::user()->id }}">
