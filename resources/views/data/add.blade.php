@@ -27,7 +27,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="data_item">項目名</label>
-                    <input type="text" id="data_item" name="data_item"></input>
+                    <input type="text" id="data_item" name="data_item">
                     @error('data_item')
                         <p style="color: red;">{{ $message }}</p>
                     @enderror

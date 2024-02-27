@@ -159,19 +159,21 @@
         <p>portfolio site</p>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const monthSelect = document.getElementById('month-select');
-            monthSelect.addEventListener('change', function() {
-                const monthValue = monthSelect.value;
-                // querySelectorAllを使用して、クラス名が'month-hidden'のすべてのinput要素を取得し、valueを更新
-                document.querySelectorAll('.month-hidden').forEach(function(input) {
-                    input.value = monthValue;
-                });
+    document.addEventListener('DOMContentLoaded', function() {
+        const monthSelect = document.getElementById('month-select');
+        monthSelect.addEventListener('change', function() {
+            const monthValue = monthSelect.value;
+            // querySelectorAllを使用して、クラス名が'month-hidden'のすべてのinput要素を取得し、valueを更新
+            document.querySelectorAll('.month-hidden').forEach(function(input) {
+                input.value = monthValue;
             });
-            // ページロード時に現在選択されている月の値を全ての.month-hiddenに設定
+        });
+        // ページロード時に現在選択されている月の値を全ての.month-hiddenに設定
+        const initialMonthValue = monthSelect.value;
         document.querySelectorAll('.month-hidden').forEach(function(input) {
             input.value = monthSelect.value;
         });
+    });
     </script>
 </body>
 </html>
