@@ -59,7 +59,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    @foreach($data_b as $data)
+                        <tr>
+                            <td>{{ $data->name }}</td>
+                            <td><input type="number" id="{{ $data->name }}" name="{{ $data->name }}" min="0"></td>
+                            <td><button type="submit" class="save-button">学習時間を保存する</button></td>
+                            <td><button type="submit" class="delete-button">削除する</button></td>
+                        </tr>
+                    @endforeach
+                    <!-- <tr>
                         <td>Ruby</td>
                         <td><input type="number" id="ruby" name="ruby" min="0"></td>
                         <td><button type="submit" class="save-button">学習時間を保存する</button></td>
@@ -76,7 +84,7 @@
                         <td><input type="number" id="mysql" name="mysql" min="0"></td>
                         <td><button type="submit" class="save-button">学習時間を保存する</button></td>
                         <td><button type="submit" class="delete-button">削除する</button></td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </section>
