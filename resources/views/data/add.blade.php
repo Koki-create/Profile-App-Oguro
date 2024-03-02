@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group">
                     <label for="time">学習時間</label>
-                    <input type="number" id="time" name="time" min="0">
+                    <input type="number" id="time" name="time">
                     <p>分単位で入力してください。</p>
                     @error('time')
                         <p style="color: red;">{{ $message }}</p>
