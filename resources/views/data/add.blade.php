@@ -51,7 +51,7 @@
                     @if(session()->has('create_complete'))
                         <p>{{ session('category') }}に{{ session('data_item') }}を<br>
                             {{ session('time') }}分で追加しました！</p>
-                        @endif
+                    @endif
                     <form action="{{ route('data.index') }}" method="get">
                         <button type="submit" class="submit-button">編集ページに戻る</button>
                     </form>

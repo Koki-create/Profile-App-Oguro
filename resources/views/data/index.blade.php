@@ -5,10 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="/css/style.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="/css/style.css" rel="stylesheet">
     <title>profile-edit</title>
 </head>
 <body>
@@ -162,16 +162,16 @@
                 <div class="modal-content">
                     @if(session()->has('update_complete'))
                         <p>{{ session('data_item') }}の学習時間を保存しました！</p>
+                        <form action="{{ route('data.index') }}" method="get">
+                            <button type="submit" class="submit-button">編集ページに戻る</button>
+                        </form>
                     @endif
-                    <form action="{{ route('data.index') }}" method="get">
-                        <button type="submit" class="submit-button">編集ページに戻る</button>
-                    </form>
                 </div>
             </div>
         </div>
         <!-- モーダル終了 -->
     </main>
-    <footer>
+    <footer class="custom-footer">
         <p>portfolio site</p>
     </footer>
     <script>
@@ -185,16 +185,18 @@
                 input.value = monthValue;
             });
 
-            // モーダルを表示する条件をチェック
-            @if(session()->has('update_complete'))
-                $('#completionModal').modal('show');
-            @endif
         });
         // ページロード時に現在選択されている月の値を全ての.month-hiddenに設定
         const initialMonthValue = monthSelect.value;
         document.querySelectorAll('.month-hidden').forEach(function(input) {
             input.value = monthSelect.value;
         });
+        // モーダルの表示
+        $(document).ready(function() {
+            @if(session()->has('update_complete'))
+                $('#completionModal').modal('show');
+            @endif
+        });            
     });
 
     </script>

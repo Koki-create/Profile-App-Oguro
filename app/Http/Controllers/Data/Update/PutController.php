@@ -25,5 +25,7 @@ class PutController extends Controller
         session()->flash('update_complete', true);
         session()->flash('data_item', $data_item);
 
+        return redirect()->back();
+
     }
 }

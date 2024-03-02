@@ -361,6 +361,17 @@ input[type="number"] {
   align-items: center;
 }
 
+.category-header h3 {
+  font-family: Roboto;
+  font-size: 1.2vw;
+  font-weight: 700;
+  line-height: 2.5vh;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 4vh;
+  padding: 2vh 0;
+}
+
 .modal fade {
   padding: 5vh;
   width: 44vw;
