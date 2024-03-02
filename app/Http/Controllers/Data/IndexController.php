@@ -16,10 +16,12 @@ class IndexController extends Controller
     public function __invoke(Request $request)
     {
         $userId = Auth::user()->id;
-        $selectedMonth = Carbon::now()->month;
+        $currentMonth = Carbon::now()->month;
 
         if ($request->month) {
             $selectedMonth = $request->month;
+        } else {
+            $selectedMonth = $currentMonth;
         }
 
         $data_b = Data::where('user_id', $userId)
@@ -37,7 +39,7 @@ class IndexController extends Controller
                         ->where('month', $selectedMonth)
                         ->get();
                         
-        return view('data.index', compact('selectedMonth', 'data_b', 'data_h', 'data_i'));
+        return view('data.index', compact('currentMonth', 'selectedMonth', 'data_b', 'data_h', 'data_i'));
 
     }
 }

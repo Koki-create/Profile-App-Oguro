@@ -23,8 +23,8 @@
             <form action="{{ route('data.index') }}" method="get">
                 <select name="month" id="month-select" class="month-pulldown">
                     @php
-                        $startMonth = $selectedMonth - 2;
-                        $endMonth = $selectedMonth;
+                        $startMonth = $currentMonth - 2;
+                        $endMonth = $currentMonth;
                     @endphp
 
                     @for ($i = $startMonth; $i <= $endMonth; $i++)
