@@ -38,23 +38,25 @@ class CreateRequest extends FormRequest
         ];
     }
 
-    public function withValidator(\Illuminate\Contracts\Validation\Validator $validator)
-    {
-        $data_item = $this->input('data_item');
-        
-        $validator->after(function ($validator) {
-            if ($validator->fails()) {
-                $validator->errors()->add('data_item', $data_item . 'は既に登録されています。');
-            }
-        });
-    }
+//     public function withValidator(\Illuminate\Contracts\Validation\Validator $validator)
+//     {
+//         $data_item = $this->input('data_item');
 
-    public function messages(): array
-    {
+//         $validator->after(function ($validator) {
+    //             if ($validator->fails()) {
+        //                 $validator->errors()->add('data_item', $data_item . 'は既に登録されています。');
+        //             }
+        //         });
+        //     }
+        
+        public function messages(): array
+        {
+            $data_item = $this->input('data_item');
+
         return [
             'data_item.required' => '項目名は必ず入力してください',
             'data_item.max' => '項目名は50文字以内で入力してください',
-            // 'data_item.unique' => 'この項目名は既に登録されています',
+            'data_item.unique' => $data_item.'は既に登録されています',
             'time.required' => '学習時間は必ず入力してください',
             'time.numeric' => '学習時間は0以上の数字で入力してください',
             'time.min' => '学習時間は0以上の数字で入力してください',
