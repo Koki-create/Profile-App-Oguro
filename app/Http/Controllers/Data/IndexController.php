@@ -16,24 +16,28 @@ class IndexController extends Controller
     public function __invoke(Request $request)
     {
         $userId = Auth::user()->id;
-        $currentMonth = Carbon::now()->month;
+        $selectedMonth = Carbon::now()->month;
+
+        if ($request->month) {
+            $selectedMonth = $request->month;
+        }
 
         $data_b = Data::where('user_id', $userId)
                         ->where('category_id', 1) 
-                        ->where('month', $currentMonth)
+                        ->where('month', $selectedMonth)
                         ->get();
 
         $data_h = Data::where('user_id', $userId)
                         ->where('category_id', 2) 
-                        ->where('month', $currentMonth)
+                        ->where('month', $selectedMonth)
                         ->get();
 
         $data_i = Data::where('user_id', $userId)
                         ->where('category_id', 3) 
-                        ->where('month', $currentMonth)
+                        ->where('month', $selectedMonth)
                         ->get();
                         
-        return view('data.index', compact('currentMonth', 'data_b', 'data_h', 'data_i'));
+        return view('data.index', compact('selectedMonth', 'data_b', 'data_h', 'data_i'));
 
     }
 }

@@ -20,25 +20,27 @@
     </header>
     <main>
         <section class="month-section">
-            <select name="month" id="month-select" class="month-pulldown">
-                @php
-                    $startMonth = $currentMonth - 2;
-                    $endMonth = $currentMonth;
-                @endphp
-
-                @for ($i = $startMonth; $i <= $endMonth; $i++)
+            <form action="{{ route('data.index') }}" method="get">
+                <select name="month" id="month-select" class="month-pulldown">
                     @php
-                        // 年をまたぐ場合、月の値を調整
-                        $monthValue = $i;
-                        if ($monthValue < 1) {
-                            $monthValue += 12;
-                        }
+                        $startMonth = $selectedMonth - 2;
+                        $endMonth = $selectedMonth;
                     @endphp
-                    <option value="{{ $monthValue }}" {{ $monthValue == $currentMonth ? 'selected' : '' }}>
-                        {{ $monthValue }}月
-                    </option>
-                @endfor
-            </select>
+
+                    @for ($i = $startMonth; $i <= $endMonth; $i++)
+                        @php
+                            // 年をまたぐ場合、月の値を調整
+                            $monthValue = $i;
+                            if ($monthValue < 1) {
+                                $monthValue += 12;
+                            }
+                        @endphp
+                        <option value="{{ $monthValue }}" {{ $monthValue == $selectedMonth ? 'selected' : '' }}>
+                            {{ $monthValue }}月
+                        </option>
+                    @endfor
+                </select>
+            </form>
         </section>
         <section class="category-section">
             <div class="category-header">
@@ -139,6 +141,7 @@
         const monthSelect = document.getElementById('month-select');
         monthSelect.addEventListener('change', function() {
             const monthValue = monthSelect.value;
+            this.form.submit();
             // querySelectorAllを使用して、クラス名が'month-hidden'のすべてのinput要素を取得し、valueを更新
             document.querySelectorAll('.month-hidden').forEach(function(input) {
                 input.value = monthValue;
