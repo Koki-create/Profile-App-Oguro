@@ -62,7 +62,7 @@
                     @foreach($data_b as $data)
                         <tr>
                             <td>{{ $data->name }}</td>
-                            <td><input type="number" id="{{ $data->name }}" name="{{ $data->name }}" min="0"></td>
+                            <td><input type="number" id="{{ $data->name }}" name="{{ $data->name }}" min="0" value="{{ $data->time }}"></td>
                             <td><button type="submit" class="save-button">学習時間を保存する</button></td>
                             <td><button type="submit" class="delete-button">削除する</button></td>
                         </tr>
@@ -92,26 +92,12 @@
                     @foreach($data_h as $data)
                         <tr>
                             <td>{{ $data->name }}</td>
-                            <td><input type="number" id="{{ $data->name }}" name="{{ $data->name }}" min="0"></td>
+                            <td><input type="number" id="{{ $data->name }}" name="{{ $data->name }}" min="0" value="{{ $data->time }}"></td>
                             <td><button type="submit" class="save-button">学習時間を保存する</button></td>
                             <td><button type="submit" class="delete-button">削除する</button></td>
                         </tr>
                     @endforeach
                 </tbody>
-                <!-- <tbody>
-                    <tr>
-                        <td>HTML</td>
-                        <td><input type="number" id="html" name="html" min="0"></td>
-                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
-                        <td><button type="submit" class="delete-button">削除する</button></td>
-                    </tr>
-                    <tr>
-                        <td>CSS</td>
-                        <td><input type="number" id="css" name="css" min="0"></td>
-                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
-                        <td><button type="submit" class="delete-button">削除する</button></td>
-                    </tr>
-                </tbody> -->
             </table>
         </section>
         <section class="category-section">
@@ -136,32 +122,12 @@
                     @foreach($data_i as $data)
                         <tr>
                             <td>{{ $data->name }}</td>
-                            <td><input type="number" id="{{ $data->name }}" name="{{ $data->name }}" min="0"></td>
+                            <td><input type="number" id="{{ $data->name }}" name="{{ $data->name }}" min="0" value="{{ $data->time }}"></td>
                             <td><button type="submit" class="save-button">学習時間を保存する</button></td>
                             <td><button type="submit" class="delete-button">削除する</button></td>
                         </tr>
                     @endforeach
                 </tbody>
-                <!-- <tbody>
-                    <tr>
-                        <td>Heroku</td>
-                        <td><input type="number" id="heroku" name="heroku" min="0"></td>
-                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
-                        <td><button type="submit" class="delete-button">削除する</button></td>
-                    </tr>
-                    <tr>
-                        <td>AWS</td>
-                        <td><input type="number" id="aws" name="aws" min="0"></td>
-                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
-                        <td><button type="submit" class="delete-button">削除する</button></td>
-                    </tr>
-                    <tr>
-                        <td>Firebase</td>
-                        <td><input type="number" id="firebase" name="firebase" min="0"></td>
-                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
-                        <td><button type="submit" class="delete-button">削除する</button></td>
-                    </tr>
-                </tbody> -->
             </table>
         </section>
     </main>
