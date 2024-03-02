@@ -67,24 +67,6 @@
                             <td><button type="submit" class="delete-button">削除する</button></td>
                         </tr>
                     @endforeach
-                    <!-- <tr>
-                        <td>Ruby</td>
-                        <td><input type="number" id="ruby" name="ruby" min="0"></td>
-                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
-                        <td><button type="submit" class="delete-button">削除する</button></td>
-                    </tr>
-                    <tr>
-                        <td>Rails</td>
-                        <td><input type="number" id="rails" name="rails" min="0"></td>
-                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
-                        <td><button type="submit" class="delete-button">削除する</button></td>
-                    </tr>
-                    <tr>
-                        <td>MySQL</td>
-                        <td><input type="number" id="mysql" name="mysql" min="0"></td>
-                        <td><button type="submit" class="save-button">学習時間を保存する</button></td>
-                        <td><button type="submit" class="delete-button">削除する</button></td>
-                    </tr> -->
                 </tbody>
             </table>
         </section>
@@ -107,6 +89,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($data_h as $data)
+                        <tr>
+                            <td>{{ $data->name }}</td>
+                            <td><input type="number" id="{{ $data->name }}" name="{{ $data->name }}" min="0"></td>
+                            <td><button type="submit" class="save-button">学習時間を保存する</button></td>
+                            <td><button type="submit" class="delete-button">削除する</button></td>
+                        </tr>
+                    @endforeach
+                </tbody>
+                <!-- <tbody>
                     <tr>
                         <td>HTML</td>
                         <td><input type="number" id="html" name="html" min="0"></td>
@@ -119,7 +111,7 @@
                         <td><button type="submit" class="save-button">学習時間を保存する</button></td>
                         <td><button type="submit" class="delete-button">削除する</button></td>
                     </tr>
-                </tbody>
+                </tbody> -->
             </table>
         </section>
         <section class="category-section">
@@ -141,6 +133,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($data_i as $data)
+                        <tr>
+                            <td>{{ $data->name }}</td>
+                            <td><input type="number" id="{{ $data->name }}" name="{{ $data->name }}" min="0"></td>
+                            <td><button type="submit" class="save-button">学習時間を保存する</button></td>
+                            <td><button type="submit" class="delete-button">削除する</button></td>
+                        </tr>
+                    @endforeach
+                </tbody>
+                <!-- <tbody>
                     <tr>
                         <td>Heroku</td>
                         <td><input type="number" id="heroku" name="heroku" min="0"></td>
@@ -159,7 +161,7 @@
                         <td><button type="submit" class="save-button">学習時間を保存する</button></td>
                         <td><button type="submit" class="delete-button">削除する</button></td>
                     </tr>
-                </tbody>
+                </tbody> -->
             </table>
         </section>
     </main>

@@ -23,6 +23,17 @@ class IndexController extends Controller
                         ->where('month', $currentMonth)
                         ->get();
 
-        return view('data.index', compact('currentMonth', 'data_b'));
+        $data_h = Data::where('user_id', $userId)
+                        ->where('category_id', 2) 
+                        ->where('month', $currentMonth)
+                        ->get();
+
+        $data_i = Data::where('user_id', $userId)
+                        ->where('category_id', 3) 
+                        ->where('month', $currentMonth)
+                        ->get();
+                        
+        return view('data.index', compact('currentMonth', 'data_b', 'data_h', 'data_i'));
+
     }
 }
