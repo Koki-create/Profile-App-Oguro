@@ -181,26 +181,25 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60vw;
-  height:35vh;
-  margin-bottom: auto;
+  min-width: 60vw;
+  min-height:45vh;
 }
 
 .profile-image {
-  width: 30vw;
+  width: 25vw;
   height:45vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex: none;
   margin-top: auto;
-  margin-bottom: -5vh;
+  /* margin-bottom: -5vh; */
   margin-left: 3vw;
 }
 
 .profile-image img {
-  width: 16vw;
-  height: 35vh;
+  width: 18vw;
+  height: 40vh;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -214,7 +213,7 @@ footer p {
 
 .profile-info {
   width: 35vw;
-  height:25vh;  
+  height: 45vh;  
   margin: 0 1vw;
   flex: none;
 }
@@ -226,7 +225,8 @@ footer p {
 }
 
 .profile-info p {
-  font-size: 1vw;
+  font-weight: 400;
+  font-size: 0.8vw;
 }
 
 .profile-edit-button {
@@ -411,7 +411,7 @@ input[type="number"] {
 }
 
 .modal-dialog .modal-content {
-  overflow-y: auto;
+  /* overflow-y: auto; */
   max-height: calc(100vh - (1rem * 2));
 }
 
@@ -421,7 +421,8 @@ input[type="number"] {
   align-items: center;
   min-height: 40vh;
   min-width: 60vw;
-  padding: 10vh 0;
+  padding-top: 3vh;
+  padding-bottom: 10vh;
 }
 
 #myBarChart {
