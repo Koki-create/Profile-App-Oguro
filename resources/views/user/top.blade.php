@@ -39,10 +39,55 @@
     </div>
     <div class="chart">
         <h2>学習チャート</h2>
-        <form action="{{ route('data.index') }}" method="get">
+        <form action="{{ route('data.index') }}" method="get" class="form-chart">
             @csrf
             <button type="submit" class="submit-button">編集する</button>
         </form>
+    <canvas id="myBarChart"></canvas>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    
+    <script>
+    var ctx = document.getElementById("myBarChart");
+    var myBarChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+        labels: ['先々月', '先月', '今月'],
+        datasets: [
+            {
+            label: 'バックエンド',
+            data: [{{ $data_b_beforePrevious }}, {{ $data_b_previous }}, {{ $data_b_current }}],
+            backgroundColor: "rgb(254,178,194)"
+            },{
+            label: 'フロントエンド',
+            data: [{{ $data_h_beforePrevious }}, {{ $data_h_previous }}, {{ $data_h_current }}],
+            backgroundColor: "rgb(255,207,164)"
+            },{
+            label: 'インフラ',
+            data: [{{ $data_i_beforePrevious }}, {{ $data_i_previous }}, {{ $data_i_current }}],
+            backgroundColor: "rgb(254,229,175)"
+            }
+        ]
+        },
+        options: {
+        title: {
+            display: true,
+            text: 'Chart.js Bar Chart'
+        },
+        scales: {
+            yAxes: [{
+            ticks: {
+                suggestedMax: 100,
+                suggestedMin: 0,
+                stepSize: 10,
+                callback: function(value, index, values){
+                return  value
+                }
+            }
+            }]
+        },
+        }
+    });
+    </script>
     </div>
     </main>
     <footer>
