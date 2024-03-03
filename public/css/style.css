@@ -79,7 +79,7 @@ main {
   width: 30vw;
   display: flex;
   flex-direction: column;
-  align-items: center; /* 子要素を中央に揃える */
+  align-items: center;
   width: 100%;
 }
 
@@ -189,12 +189,12 @@ footer p {
 .profile-image {
   width: 30vw;
   height:45vh;
-  display: flex; /* Flexboxの表示設定を追加 */
-  flex-direction: column; /* 子要素を縦に並べる */
-  align-items: center; /* 子要素を中央揃えにする */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex: none;
   margin-top: auto;
-  margin-bottom: -5vh; /* 下にずらす距離（負の値で上へ、正の値で下へ） */
+  margin-bottom: -5vh;
   margin-left: 3vw;
 }
 
@@ -222,7 +222,7 @@ footer p {
 .profile-info h2 {
   width: 14vw;
   border-bottom: 2px solid #00000080;
-  padding-bottom: 5px; /* 文字とボーダーとの間隔を調整 */
+  padding-bottom: 5px;
 }
 
 .profile-info p {
@@ -236,13 +236,13 @@ footer p {
 .chart {
   display: flex;
   flex-direction: column;
-  align-items: center; /* 子要素を中央に揃える */
+  align-items: center;
 }
 
 .chart h2 {
-  text-align: center; /* テキストを中央揃えにする */
+  text-align: center;
   border-bottom: 2px solid #00000080;
-  padding-bottom: 5px; /* 文字とボーダーとの間隔を調整 */
+  padding-bottom: 5px;
   width: 20vw;
 }
 
@@ -273,39 +273,39 @@ footer p {
 }
 
 .file-style:hover {
-  background-color: #5c5b5b; /* ホバー時の背景色 */
+  background-color: #5c5b5b;
 }
 
 .category-section {
-  border: 1.2px solid #00000080; /* グレーの枠線 */
-  padding: 1vh 2vw; /* 内側の余白 */
+  border: 1.2px solid #00000080;
+  padding: 1vh 2vw;
   border-radius: 4px;
   width: 50vw;
-  margin: 0 auto 4vh auto; /* 中央寄せ */
+  margin: 0 auto 4vh auto;
 }
 
 .category-section h3 {
   width: 16vw;
   border-bottom: 2px solid #00000080;
-  padding-bottom: 5px; /* 文字とボーダーとの間隔を調整 */
+  padding-bottom: 5px;
 }
 
 .category-section table {
-  width: 100%; /* テーブルの幅をセクション全体に */
-  border-collapse: collapse; /* セルのボーダーを結合する */
-  margin-bottom: 20px; /* ボタンとの間隔を開ける */
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
   box-shadow: 
-  0 1px 5px rgba(0,0,0,0.12), /* 1番目のシャドウ */
-  0 2px 2px rgba(0,0,0,0.14), /* 2番目のシャドウ */
-  0 3px 1px -2px rgba(0,0,0,0.20); /* 3番目のシャドウ */
+  0 1px 5px rgba(0,0,0,0.12),
+  0 2px 2px rgba(0,0,0,0.14),
+  0 3px 1px -2px rgba(0,0,0,0.20);
 }
 
 .category-section th,
 .category-section td {
-  border-top: 1px solid #ccc; /* セルにグレーの枠線を追加 */
-  border-bottom: 1px solid #ccc; /* セルにグレーの枠線を追加 */
-  padding: 10px; /* セルの内側の余白 */
-  text-align: left; /* テキストを左揃えに */
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
   border-radius: 8px;
   background-color: #fff;
   font-size: 0.8vw;
@@ -336,21 +336,19 @@ footer p {
 
 .month-section {
   display: flex;
-  align-items: center; /* アイテムを垂直方向の中心に配置 */
-  align-self: flex-start; /* 左端に寄せる */
-  width: 100%; /* セクションの幅を最大にする */
+  align-items: center;
+  align-self: flex-start;
+  width: 100%;
   margin-bottom: 1vh;
   font-weight: 700;
-  /* padding-left: 22vw; */
 }
 
 .month-pulldown {
-  /* 必要なスタイルをここに追加 */
   margin: -2vh 0 2vh 23vw;
 }
 
 input[type="number"] {
-  border: 1px solid #ccc; /* セルにグレーの枠線を追加 */
+  border: 1px solid #ccc;
   border-radius: 2px;
   width: 8vw;
 }
@@ -386,7 +384,7 @@ input[type="number"] {
   margin-top: auto;
   margin-bottom: auto;
   max-height: 60vh;
-  padding: 3rem; /* 内容に余白を与える */
+  padding: 3rem;
 }
 
 .modal-content p {
@@ -411,9 +409,8 @@ input[type="number"] {
 }
 
 .modal-dialog .modal-content {
-  /* モーダルの内容が画面の大きさによっては縦に伸びすぎないようにする */
-  overflow-y: auto; /* 内容が多い場合はスクロール */
-  max-height: calc(100vh - (1rem * 2)); /* 上下のマージンを考慮した最大の高さ */
+  overflow-y: auto;
+  max-height: calc(100vh - (1rem * 2));
 }
 
 .chart {
