@@ -69,4 +69,7 @@ Route::post('data/create', \App\Http\Controllers\Data\Add\CreateController::clas
 Route::put('data/update', \App\Http\Controllers\Data\Update\PutController::class)
 ->name('data.update');
 
+Route::delete('data/delete', \App\Http\Controllers\Data\Delete\DeleteController::class)
+->name('data.delete');
+
 require __DIR__.'/auth.php';

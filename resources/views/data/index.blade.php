@@ -76,7 +76,14 @@
                                     <button type="submit" class="save-button">学習時間を保存する</button>
                                 </form>
                             </td>
-                            <td><button type="submit" class="delete-button">削除する</button></td>
+                            <td>
+                                <form action="{{ route('data.delete') }}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <input type="hidden" name="dataId" value="{{ $data->id }}">
+                                    <button type="submit" class="delete-button">削除する</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -106,14 +113,21 @@
                             <td>{{ $data->name }}</td>
                             <td>
                                 <form action="{{ route('data.update') }}" method="post">
-                                    @csrf
                                     @method('PUT')
+                                    @csrf
                                     <input type="number" id="{{ $data->id }}" name="inputTime" min="0" value="{{ $data->time }}">
                                     <input type="hidden" name="dataId" value="{{ $data->id }}">
                                     <button type="submit" class="save-button">学習時間を保存する</button>
                                 </form>
                             </td>
-                            <td><button type="submit" class="delete-button">削除する</button></td>
+                            <td>
+                                <form action="{{ route('data.delete') }}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <input type="hidden" name="dataId" value="{{ $data->id }}">
+                                    <button type="submit" class="delete-button">削除する</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -150,14 +164,21 @@
                                     <button type="submit" class="save-button">学習時間を保存する</button>
                                 </form>
                             </td>
-                            <td><button type="submit" class="delete-button">削除する</button></td>
+                            <td>
+                                <form action="{{ route('data.delete') }}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <input type="hidden" name="dataId" value="{{ $data->id }}">
+                                    <button type="submit" class="delete-button">削除する</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </section>
-        <!-- モーダル開始 -->
-        <div class="modal fade" id="completionModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <!-- 編集完了モーダル開始 -->
+        <div class="modal fade" id="updatedModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     @if(session()->has('update_complete'))
@@ -169,7 +190,21 @@
                 </div>
             </div>
         </div>
-        <!-- モーダル終了 -->
+        <!-- 編集完了モーダル終了 -->
+        <!-- 削除完了モーダル開始 -->
+        <div class="modal fade" id="deletedModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    @if(session()->has('delete_complete'))
+                        <p>{{ session('data_item') }}を削除しました！</p>
+                        <form action="{{ route('data.index') }}" method="get">
+                            <button type="submit" class="submit-button">編集ページに戻る</button>
+                        </form>
+                    @endif
+                </div>
+            </div>
+        </div>
+        <!-- 削除完了モーダル終了 -->
     </main>
     <footer class="custom-footer">
         <p>portfolio site</p>
@@ -194,8 +229,12 @@
         // モーダルの表示
         $(document).ready(function() {
             @if(session()->has('update_complete'))
-                $('#completionModal').modal('show');
+                $('#updatedModal').modal('show');
             @endif
+            @if(session()->has('delete_complete'))
+                $('#deletedModal').modal('show');
+            @endif
+
         });            
     });
 
