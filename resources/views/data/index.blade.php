@@ -51,7 +51,7 @@
                 <h3>バックエンド</h3>
                 <form action="{{ route('data.showAdd') }}" method="get">
                     <input type="hidden" name="category" value="バックエンド">
-                    <input type="hidden" name="month" class="month-hidden" value="">
+                    <input type="hidden" name="month" class="month-hidden" value="{{ $selectedMonth }}">
                     <button type="submit" class="submit-button">項目を追加する</button>
                 </form>
             </div>
@@ -97,7 +97,7 @@
                 <h3>フロントエンド</h3>
                 <form action="{{ route('data.showAdd') }}" method="get">
                     <input type="hidden" name="category" value="フロントエンド">
-                    <input type="hidden" name="month" class="month-hidden" value="">
+                    <input type="hidden" name="month" class="month-hidden" value="{{ $selectedMonth }}">
                     <button type="submit" class="submit-button">項目を追加する</button>
                 </form>
             </div>
@@ -143,7 +143,7 @@
                 <h3>インフラ</h3>
                 <form action="{{ route('data.showAdd') }}" method="get">
                     <input type="hidden" name="category" value="インフラ">
-                    <input type="hidden" name="month" class="month-hidden" value="">
+                    <input type="hidden" name="month" class="month-hidden" value="{{ $selectedMonth }}">
                     <button type="submit" class="submit-button">項目を追加する</button>
                 </form>
             </div>

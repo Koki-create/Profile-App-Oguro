@@ -20,23 +20,27 @@ class IndexController extends Controller
 
         if ($request->month) {
             $selectedMonth = $request->month;
+            session(['selectedMonth' => $selectedMonth]);
         } else {
-            $selectedMonth = $currentMonth;
+            $selectedMonth = session('selectedMonth', $currentMonth);
         }
 
         $data_b = Data::where('user_id', $userId)
                         ->where('category_id', 1) 
                         ->where('month', $selectedMonth)
+                        ->orderBy('created_at', 'ASC')
                         ->get();
-
-        $data_h = Data::where('user_id', $userId)
+                        
+                        $data_h = Data::where('user_id', $userId)
                         ->where('category_id', 2) 
                         ->where('month', $selectedMonth)
+                        ->orderBy('created_at', 'ASC')
                         ->get();
-
-        $data_i = Data::where('user_id', $userId)
+                        
+                        $data_i = Data::where('user_id', $userId)
                         ->where('category_id', 3) 
                         ->where('month', $selectedMonth)
+                        ->orderBy('created_at', 'ASC')
                         ->get();
                         
         return view('data.index', compact('currentMonth', 'selectedMonth', 'data_b', 'data_h', 'data_i'));
