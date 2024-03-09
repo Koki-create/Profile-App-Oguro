@@ -14,7 +14,7 @@
 <body>
     <header>
         <div class="header-content">
-            <h1><a href="route('user.top')" style="color: white; text-decoration: none;">My Portfolio</a></h1>
+            <h1><a href="{{ route('user.top') }}" style="color: white; text-decoration: none;">My Portfolio</a></h1>
         </div>
         <form action="{{ route('user.logout') }}" method="post">
             @csrf

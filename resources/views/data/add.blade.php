@@ -13,7 +13,7 @@
 </head>
 <body>
     <header class="custom-header">
-        <h1><a href="route('user.top')" style="color: white; text-decoration: none;">My Portfolio</a></h1>
+        <h1><a href="{{ route('user.top') }}" style="color: white; text-decoration: none;">My Portfolio</a></h1>
         <form action="{{ route('user.logout') }}" method="post">
             @csrf
             <button type="submit" class="button_white">ログアウト</button>

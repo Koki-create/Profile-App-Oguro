@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="header-content centered-header">
-            <h1><a href="route('user.top')" style="color: white; text-decoration: none;">My Portfolio</a></h1>
+            <h1><a href="{{ route('user.top') }}" style="color: white; text-decoration: none;">My Portfolio</a></h1>
         </div>
     </header>
     <main>
