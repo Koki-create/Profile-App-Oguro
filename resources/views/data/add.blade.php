@@ -26,14 +26,14 @@
                 @csrf
                 <div class="form-group">
                     <label for="data_item">項目名</label>
-                    <input type="text" id="data_item" name="data_item">
+                    <input type="text" id="data_item" name="data_item" value="{{ old('data_item') }}">
                     @error('data_item')
                         <p style="color: red;">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label for="time">学習時間</label>
-                    <input type="number" id="time" name="time">
+                    <input type="number" id="time" name="time" value="{{ old('time') }}">
                     <p>分単位で入力してください。</p>
                     @error('time')
                         <p style="color: red;">{{ $message }}</p>

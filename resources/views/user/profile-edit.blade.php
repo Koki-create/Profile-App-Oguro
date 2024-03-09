@@ -25,7 +25,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="introduction">自己紹介文</label>
-                    <textarea id="introduction" name="introduction" class="textarea-style">{{\Illuminate\Support\Facades\Auth::user()->introduction}}</textarea>
+                    <textarea id="introduction" name="introduction" class="textarea-style" value="{{ old('introduction') }}">{{\Illuminate\Support\Facades\Auth::user()->introduction}}</textarea>
                     @error('introduction')
                         <p style="color: red;">{{ $message }}</p>
                     @enderror

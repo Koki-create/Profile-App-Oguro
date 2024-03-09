@@ -24,14 +24,14 @@
                 @csrf
                 <div class="form-group">
                     <label for="name">氏名</label>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name" value="{{ old('name') }}">
                     @error('name')
                         <p style="color: red;">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label for="email">メールアドレス</label>
-                    <input type="text" id="email" name="email">
+                    <input type="text" id="email" name="email" value="{{ old('email') }}">
                     @error('email')
                         <p style="color: red;">{{ $message }}</p>
                     @enderror
