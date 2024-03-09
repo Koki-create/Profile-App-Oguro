@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="header-content">
-            <h1>My Portfolio</h1>
+            <h1><a href="route('user.top')" style="color: white; text-decoration: none;">My Portfolio</a></h1>
         </div>
         <form action="{{ route('user.showLogin') }}" method="get">
             <button type="submit" class="button_white">ログイン</button>
