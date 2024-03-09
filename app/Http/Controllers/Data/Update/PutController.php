@@ -15,6 +15,7 @@ class PutController extends Controller
     {
         $dataId = $request->input('dataId');
         $inputTime = $request->input('inputTime');
+        $selectedMonth = $request->input('month');
 
         $data = Data::where('id', $dataId)->firstOrFail();
         $data->time = $inputTime;
@@ -24,6 +25,7 @@ class PutController extends Controller
         
         session()->flash('update_complete', true);
         session()->flash('data_item', $data_item);
+        session()->put('selectedMonth', $selectedMonth);
 
         return redirect()->back();
 

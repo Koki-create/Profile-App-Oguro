@@ -28,6 +28,7 @@
                     @php
                         $startMonth = $currentMonth - 2;
                         $endMonth = $currentMonth;
+                        $selectedMonth = session('selectedMonth', $currentMonth);
                     @endphp
 
                     @for ($i = $startMonth; $i <= $endMonth; $i++)
