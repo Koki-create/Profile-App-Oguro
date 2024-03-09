@@ -434,3 +434,8 @@ input[type="number"] {
 .form-chart {
   margin-bottom: 5vh;
 }
+
+.scrollable {
+  max-height: 28vh;
+  overflow-y: auto;
+}

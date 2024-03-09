@@ -54,40 +54,42 @@
                     <button type="submit" class="submit-button">項目を追加する</button>
                 </form>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>項目名</th>
-                        <th>学習時間</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($data_b as $data)
+            <div class="scrollable">
+                <table>
+                    <thead>
                         <tr>
-                            <td>{{ $data->name }}</td>
-                            <td>
-                                <form action="{{ route('data.update') }}" method="post">
-                                    @csrf
-                                    @method('PUT')
-                                    <input type="number" id="{{ $data->id }}" name="inputTime" min="0" value="{{ $data->time }}">
-                                    <input type="hidden" name="dataId" value="{{ $data->id }}">
-                                    <button type="submit" class="save-button">学習時間を保存する</button>
-                                </form>
-                            </td>
-                            <td>
-                                <form action="{{ route('data.delete') }}" method="post">
-                                    @method('DELETE')
-                                    @csrf
-                                    <input type="hidden" name="dataId" value="{{ $data->id }}">
-                                    <button type="submit" class="delete-button">削除する</button>
-                                </form>
-                            </td>
+                            <th>項目名</th>
+                            <th>学習時間</th>
+                            <th></th>
+                            <th></th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach($data_b as $data)
+                            <tr>
+                                <td>{{ $data->name }}</td>
+                                <td>
+                                    <form action="{{ route('data.update') }}" method="post">
+                                        @csrf
+                                        @method('PUT')
+                                        <input type="number" id="{{ $data->id }}" name="inputTime" min="0" value="{{ $data->time }}">
+                                        <input type="hidden" name="dataId" value="{{ $data->id }}">
+                                        <button type="submit" class="save-button">学習時間を保存する</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="{{ route('data.delete') }}" method="post">
+                                        @method('DELETE')
+                                        @csrf
+                                        <input type="hidden" name="dataId" value="{{ $data->id }}">
+                                        <button type="submit" class="delete-button">削除する</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </section>
         <section class="category-section">
             <div class="category-header">
@@ -98,17 +100,18 @@
                     <button type="submit" class="submit-button">項目を追加する</button>
                 </form>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>項目名</th>
-                        <th>学習時間</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($data_h as $data)
+            <div class="scrollable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目名</th>
+                            <th>学習時間</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($data_h as $data)
                         <tr>
                             <td>{{ $data->name }}</td>
                             <td>
@@ -129,9 +132,10 @@
                                 </form>
                             </td>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </section>
         <section class="category-section">
             <div class="category-header">
@@ -142,40 +146,42 @@
                     <button type="submit" class="submit-button">項目を追加する</button>
                 </form>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>項目名</th>
-                        <th>学習時間</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($data_i as $data)
+            <div class="scrollable">
+                <table>
+                    <thead>
                         <tr>
-                            <td>{{ $data->name }}</td>
-                            <td>
-                                <form action="{{ route('data.update') }}" method="post">
-                                    @csrf
-                                    @method('PUT')
-                                    <input type="number" id="{{ $data->id }}" name="inputTime" min="0" value="{{ $data->time }}">
-                                    <input type="hidden" name="dataId" value="{{ $data->id }}">
-                                    <button type="submit" class="save-button">学習時間を保存する</button>
-                                </form>
-                            </td>
-                            <td>
-                                <form action="{{ route('data.delete') }}" method="post">
-                                    @method('DELETE')
-                                    @csrf
-                                    <input type="hidden" name="dataId" value="{{ $data->id }}">
-                                    <button type="submit" class="delete-button">削除する</button>
-                                </form>
-                            </td>
+                            <th>項目名</th>
+                            <th>学習時間</th>
+                            <th></th>
+                            <th></th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach($data_i as $data)
+                            <tr>
+                                <td>{{ $data->name }}</td>
+                                <td>
+                                    <form action="{{ route('data.update') }}" method="post">
+                                        @csrf
+                                        @method('PUT')
+                                        <input type="number" id="{{ $data->id }}" name="inputTime" min="0" value="{{ $data->time }}">
+                                        <input type="hidden" name="dataId" value="{{ $data->id }}">
+                                        <button type="submit" class="save-button">学習時間を保存する</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="{{ route('data.delete') }}" method="post">
+                                        @method('DELETE')
+                                        @csrf
+                                        <input type="hidden" name="dataId" value="{{ $data->id }}">
+                                        <button type="submit" class="delete-button">削除する</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </section>
         <!-- 編集完了モーダル開始 -->
         <div class="modal fade" id="updatedModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
