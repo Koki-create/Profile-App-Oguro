@@ -197,8 +197,8 @@ footer p {
 }
 
 .profile-image img {
-  width: 20vmin; /* vmin単位に変更 */
-  height: 20vmin; /* vmin単位に変更 */
+  width: 50vmin; /* vmin単位に変更 */
+  height: 50vmin; /* vmin単位に変更 */
   border-radius: 50%;
   object-fit: cover;
 }
