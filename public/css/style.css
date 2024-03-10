@@ -197,6 +197,7 @@ footer p {
 }
 
 .profile-image img {
+  aspect-ratio: 1 / 1;
   width: 35vmin; /* vmin単位に変更 */
   height: 35vmin; /* vmin単位に変更 */
   border-radius: 50%;
