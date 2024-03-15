@@ -33,7 +33,7 @@ class CreateRequest extends FormRequest
             'time' => [
                 'required',
                 'numeric',
-                'min:0'
+                'min:1'
                 ]
         ];
     }
