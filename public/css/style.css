@@ -185,23 +185,19 @@ footer p {
 }
 
 .profile-image {
-  width: 25vw;
-  height:45vh;
+  width: 35vmin; /* 画像表示サイズを指定 */
+  height: 35vmin; /* この高さと幅で正方形の領域を作る */
+  border-radius: 50%; /* 角を丸くする */
+  overflow: hidden; /* 枠外の画像を非表示にする */
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  flex: none;
-  margin-top: auto;
-  /* margin-bottom: -5vh; */
-  margin-left: 3vw;
 }
 
 .profile-image img {
-  aspect-ratio: 1 / 1;
-  width: 35vmin; /* vmin単位に変更 */
-  height: 35vmin; /* vmin単位に変更 */
-  border-radius: 50%;
-  object-fit: cover;
+  width: auto; /* imgの幅を自動調整し、 */
+  height: 100%; /* 高さをdivに合わせて、縦横比を維持しながら枠内に収める */
+  object-fit: cover; /* 画像がdivのサイズに合わせて切り取られるようにする */
 }
 
 .default-profile-image {
@@ -214,7 +210,7 @@ footer p {
 .profile-info {
   width: 35vw;
   height: 45vh;  
-  margin: 0 1vw;
+  margin-left: 5vw;
   flex: none;
 }
 
