@@ -22,33 +22,38 @@ class CreateRequest extends FormRequest
      */
     public function rules(): array
     {
+        $categoryId = $this->getCategoryId();
+
         return [
             'data_item' => [
                 'required',
                 'max:50',
                 Rule::unique('learning_data', 'name')
                     ->where('user_id', $this->user()->id)
-                    ->where('month', $this->input('month')),
+                    ->where('month', $this->input('month'))
+                    ->where('category_id', $categoryId),
             ],
             'time' => [
                 'required',
                 'numeric',
                 'min:1'
-                ]
+            ]
         ];
     }
 
-//     public function withValidator(\Illuminate\Contracts\Validation\Validator $validator)
-//     {
-//         $data_item = $this->input('data_item');
+    protected function getCategoryId(): int
+    {
+        $category = $this->input('category');
 
-//         $validator->after(function ($validator) {
-    //             if ($validator->fails()) {
-        //                 $validator->errors()->add('data_item', $data_item . 'は既に登録されています。');
-        //             }
-        //         });
-        //     }
-        
+        if ($category == 'バックエンド') {
+            return 1;
+        } elseif ($category == 'フロントエンド') {
+            return 2;
+        } else {
+            return 3;
+        }
+    }
+    
         public function messages(): array
         {
             $data_item = $this->input('data_item');
