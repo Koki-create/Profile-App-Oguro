@@ -27,7 +27,7 @@ class PutController extends Controller
         session()->flash('data_item', $data_item);
         session()->put('selectedMonth', $selectedMonth);
 
-        return redirect()->back();
+        return redirect()->route('data.index', ['month' => $selectedMonth]);
 
     }
 }

@@ -75,6 +75,7 @@
                                         @method('PUT')
                                         <input type="number" id="{{ $data->id }}" name="inputTime" min="0" value="{{ $data->time }}">
                                         <input type="hidden" name="dataId" value="{{ $data->id }}">
+                                        <input type="hidden" name="month" value="{{ $selectedMonth }}"> 
                                         <button type="submit" class="save-button">学習時間を保存する</button>
                                     </form>
                                 </td>
@@ -83,6 +84,7 @@
                                         @method('DELETE')
                                         @csrf
                                         <input type="hidden" name="dataId" value="{{ $data->id }}">
+                                        <input type="hidden" name="month" value="{{ $selectedMonth }}"> 
                                         <button type="submit" class="delete-button">削除する</button>
                                     </form>
                                 </td>
@@ -121,6 +123,7 @@
                                     @csrf
                                     <input type="number" id="{{ $data->id }}" name="inputTime" min="0" value="{{ $data->time }}">
                                     <input type="hidden" name="dataId" value="{{ $data->id }}">
+                                    <input type="hidden" name="month" value="{{ $selectedMonth }}"> 
                                     <button type="submit" class="save-button">学習時間を保存する</button>
                                 </form>
                             </td>
@@ -129,6 +132,7 @@
                                     @method('DELETE')
                                     @csrf
                                     <input type="hidden" name="dataId" value="{{ $data->id }}">
+                                    <input type="hidden" name="month" value="{{ $selectedMonth }}"> 
                                     <button type="submit" class="delete-button">削除する</button>
                                 </form>
                             </td>
@@ -167,6 +171,7 @@
                                         @method('PUT')
                                         <input type="number" id="{{ $data->id }}" name="inputTime" min="0" value="{{ $data->time }}">
                                         <input type="hidden" name="dataId" value="{{ $data->id }}">
+                                        <input type="hidden" name="month" value="{{ $selectedMonth }}"> 
                                         <button type="submit" class="save-button">学習時間を保存する</button>
                                     </form>
                                 </td>
@@ -175,6 +180,7 @@
                                         @method('DELETE')
                                         @csrf
                                         <input type="hidden" name="dataId" value="{{ $data->id }}">
+                                        <input type="hidden" name="month" value="{{ $selectedMonth }}"> 
                                         <button type="submit" class="delete-button">削除する</button>
                                     </form>
                                 </td>
@@ -191,6 +197,7 @@
                     @if(session()->has('update_complete'))
                         <p>{{ session('data_item') }}の学習時間を保存しました！</p>
                         <form action="{{ route('data.index') }}" method="get">
+                            <input type="hidden" name="month" value="{{ session('selectedMonth') }}">
                             <button type="submit" class="submit-button">編集ページに戻る</button>
                         </form>
                     @endif
