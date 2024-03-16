@@ -185,7 +185,7 @@ footer p {
 }
 
 .profile-image {
-  width: 35vmin; /* 画像表示サイズを指定 */
+  width: 36vmin; /* 画像表示サイズを指定 */
   height: 35vmin; /* この高さと幅で正方形の領域を作る */
   border-radius: 50%; /* 角を丸くする */
   overflow: hidden; /* 枠外の画像を非表示にする */
@@ -201,8 +201,8 @@ footer p {
 }
 
 .default-profile-image {
-  width: 16vw;
-  height: 35vh;
+  width: 36vmin;
+  height: 35vmin;
   border-radius: 50%;
   background-color: #C4C4C4;
 }

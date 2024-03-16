@@ -62,7 +62,6 @@
                             <th>項目名</th>
                             <th>学習時間</th>
                             <th></th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -110,7 +109,6 @@
                             <th>項目名</th>
                             <th>学習時間</th>
                             <th></th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -157,7 +155,6 @@
                         <tr>
                             <th>項目名</th>
                             <th>学習時間</th>
-                            <th></th>
                             <th></th>
                         </tr>
                     </thead>
