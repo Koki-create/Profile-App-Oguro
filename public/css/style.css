@@ -72,7 +72,7 @@ main {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  padding-top: 6vh;
+  padding-top: 3vh;
 }
 
 .signup-section form {
@@ -177,32 +177,41 @@ footer p {
   }
 
 .profile {
+  margin-top: 2vh;
   display: flex;
-  align-items: center;
   justify-content: center;
   min-width: 60vw;
-  min-height:45vh;
+  min-height: 50vh;
+}
+
+.profile-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image-section p {
+  margin: 1vh 0;
+  font-size: 1.1vw;
 }
 
 .profile-image {
-  width: 36vmin; /* 画像表示サイズを指定 */
-  height: 35vmin; /* この高さと幅で正方形の領域を作る */
-  border-radius: 50%; /* 角を丸くする */
-  overflow: hidden; /* 枠外の画像を非表示にする */
+  width: 16vw;
+  height: 16vw;
+  border-radius: 50%;
+  overflow: hidden;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .profile-image img {
-  width: auto; /* imgの幅を自動調整し、 */
-  height: 100%; /* 高さをdivに合わせて、縦横比を維持しながら枠内に収める */
-  object-fit: cover; /* 画像がdivのサイズに合わせて切り取られるようにする */
+  width: 16vw;
+  height: 16vw;
+  object-fit: cover;
 }
 
 .default-profile-image {
-  width: 36vmin;
-  height: 35vmin;
+  width: 16vw;
+  height: 16vw;
   border-radius: 50%;
   background-color: #C4C4C4;
 }

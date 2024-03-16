@@ -20,12 +20,14 @@
     </header>
     <main>
     <div class="profile">
-        <div class="profile-image">
-            @if (\Illuminate\Support\Facades\Auth::user()->image)
-            <img src="{{ asset('storage/' . \Illuminate\Support\Facades\Auth::user()->image) }}" alt="プロフィール画像">
-            @else
-            <div class="default-profile-image"></div>
-            @endif
+        <div class="profile-image-section">
+            <div class="profile-image">
+                @if (\Illuminate\Support\Facades\Auth::user()->image)
+                <img src="{{ asset('storage/' . \Illuminate\Support\Facades\Auth::user()->image) }}" alt="プロフィール画像">
+                @else
+                <div class="default-profile-image"></div>
+                @endif
+            </div>
             <p>{{\Illuminate\Support\Facades\Auth::user()->name}}</p>
         </div>
         <div class="profile-info">
