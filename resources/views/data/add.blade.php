@@ -62,7 +62,7 @@
         </section>
     </main>
     <footer class="custom-footer">
-        <p>portfolio site</p>
+        <p>{{\Illuminate\Support\Facades\Auth::user()->name}}</p>
     </footer>
     <script>
         $(document).ready(function() {

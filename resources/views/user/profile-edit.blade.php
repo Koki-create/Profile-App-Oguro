@@ -41,7 +41,7 @@
         </section>
     </main>
     <footer>
-        <p>portfolio site</p>
+        <p>{{\Illuminate\Support\Facades\Auth::user()->name}}</p>
     </footer>
     <script>
     document.getElementById('image').addEventListener('change', function() {

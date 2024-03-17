@@ -93,7 +93,7 @@
     </div>
     </main>
     <footer>
-        <p>portfolio site</p>
+        <p>{{\Illuminate\Support\Facades\Auth::user()->name}}</p>
     </footer>
 </body>
 </html>
