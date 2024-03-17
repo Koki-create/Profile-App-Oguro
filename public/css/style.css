@@ -450,3 +450,27 @@ input[type="number"] {
 .category-section tbody tr:last-child td {
   border-bottom: none;
 }
+
+.item-name-column {
+  width: 28%;
+}
+
+.study-hour-column {
+  width: 48%;
+}
+
+.delete-button-column {
+  width: 24%;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-container-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
